@@ -45,6 +45,12 @@ if imagem and st.button("Enviar para processamento"):
         response = requests.post(url, files=files)
         if response.status_code == 200:
             st.image(response.content, caption="Imagem processada")
+            st.download_button(
+                label="📥 Baixar imagem processada",
+                data=response.content,
+                file_name="imagem_processada.jpg",
+                mime="image/jpeg"
+            )
         else:
             st.error("Erro: " + response.text)
     except Exception as e:
