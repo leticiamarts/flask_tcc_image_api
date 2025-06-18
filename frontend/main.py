@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 import io
+from frontend.utils import montar_url, enviar_imagem
 
 st.set_page_config(page_title="Processamento de Imagens", layout="centered")
 st.title("🖼️ API de Processamento de Imagens")
@@ -37,12 +38,11 @@ imagem = st.file_uploader("Envie uma imagem", type=["jpg", "jpeg", "png"])
 if imagem and st.button("Enviar para processamento"):
     files = {"image": imagem}
     
-    base_url = f"http://flask:5000/processar?operacao={operacao}"
-    query = "&".join([f"{key}={int(val)}" for key, val in params.items()])
-    url = f"{base_url}&{query}" if query else base_url
+    base_url = "http://flask:5000/processar"
+    url = montar_url(base_url, operacao, params)
 
     try:
-        response = requests.post(url, files=files)
+        response = enviar_imagem(url, files["image"])
         if response.status_code == 200:
             st.image(response.content, caption="Imagem processada")
             st.download_button(
