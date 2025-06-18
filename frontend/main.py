@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from PIL import Image
 import io
-from frontend.utils import montar_url, enviar_imagem
+from utils import montar_url, enviar_imagem
 
 st.set_page_config(page_title="Processamento de Imagens", layout="centered")
 st.title("🖼️ API de Processamento de Imagens")
