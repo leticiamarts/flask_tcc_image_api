@@ -19,7 +19,8 @@ def processar():
         return "Erro: Imagem inválida ou não pôde ser lida.", 400
 
     try:
-        img = process_image(img, operacao, request.args)
+        params = request.args.to_dict()
+        img = process_image(img, operacao, params)
         if img is None:
             return "Erro: O processamento retornou imagem vazia ou inválida.", 500
     except Exception as e:

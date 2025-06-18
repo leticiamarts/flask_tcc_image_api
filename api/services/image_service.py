@@ -31,28 +31,28 @@ def crop_image(image, x, y, w, h):
     cropped = image[y:y+h, x:x+w]
     return cropped
 
-def process_image(img, operacao, args):
+def process_image(img, operacao, params):
     if operacao == 'rotacionar':
-            angle = int(request.args.get('angle', 90))
+            angle = int(params.get('angle', 0))
             img = rotate_image(img, angle)
 
     elif operacao == 'brilho':
-        brightness = int(request.args.get('brightness', 30))
-        img = adjust_brightness_contrast(img, brightness=brightness, contrast=0)
+        brightness = int(params.get('brightness', 0))
+        img = adjust_brightness_contrast(img, brightness=brightness)
 
     elif operacao == 'contraste':
-        contrast = int(request.args.get('contrast', 50))
-        img = adjust_brightness_contrast(img, brightness=0, contrast=contrast)
+        contrast = int(params.get('contrast', 0))
+        img = adjust_brightness_contrast(img, contrast=contrast)
 
     elif operacao == 'ruido':
-        var = int(request.args.get('var', 625))  # 25² = 625
+        var = int(params.get('var', 0))
         img = add_noise(img, mean=0, var=var)
 
     elif operacao == 'recorte':
-        x = int(request.args.get('x', img.shape[1] // 4))
-        y = int(request.args.get('y', img.shape[0] // 4))
-        w = int(request.args.get('w', img.shape[1] // 2))
-        h = int(request.args.get('h', img.shape[0] // 2))
+        x = int(params.get('x', 0))
+        y = int(params.get('y', 0))
+        w = int(params.get('w', 0))
+        h = int(params.get('h', 0))
         img = crop_image(img, x, y, w, h)
 
     else:
