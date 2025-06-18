@@ -2,7 +2,6 @@ import io
 import pytest
 from unittest.mock import patch, MagicMock
 from flask import Flask
-
 from api.controllers.image_controller import image_bp
 
 @pytest.fixture
@@ -57,7 +56,7 @@ def test_processar_success(mock_image_to_bytes, mock_process_image, mock_read_im
     response = client.post('/processar?operacao=brilho', data=data, content_type='multipart/form-data')
 
     mock_read_image.assert_called_once()
-    mock_process_image.assert_called_once_with('fake_image_obj', 'brilho', response.request.args)
+    mock_process_image.assert_called_once_with('fake_image_obj', 'brilho', {'operacao': 'brilho'})
     mock_image_to_bytes.assert_called_once_with('processed_image_obj')
 
     assert response.status_code == 200
