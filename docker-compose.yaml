@@ -1,6 +1,8 @@
 services:
   flask:
-    build: ./api
+    build:
+      context: .
+      dockerfile: api/Dockerfile
     container_name: flask_api
     ports:
       - "5000:5000"
