@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-api
+            port:
+              number: 80
+      - path: /frontend
+        pathType: Prefix
+        backend:
+          service:
+            name: streamlit-ui
+            port:
+              number: 8501

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamlit-ui
+  template:
+    metadata:
+      labels:
+        app: streamlit-ui
+    spec:
+      containers:
+      - name: flask
+        image: leticiamartins11/streamlit-ui:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8501
