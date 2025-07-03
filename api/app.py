@@ -1,8 +1,5 @@
-from flask import Flask, request, jsonify, send_file
-import cv2
-import numpy as np
-import io
-from api.controllers.image_controller import image_bp
+from flask import Flask
+from controllers.image_controller import image_bp
 
 def create_app():
     app = Flask(__name__)

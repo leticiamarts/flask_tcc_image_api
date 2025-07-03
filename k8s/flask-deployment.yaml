@@ -13,8 +13,8 @@ spec:
         app: flask-api
     spec:
       containers:
-      - name: flask
+      - name: flask-api
         image: leticiamartins11/flask-api:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000

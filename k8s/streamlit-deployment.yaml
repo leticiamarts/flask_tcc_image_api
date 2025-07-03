@@ -13,8 +13,8 @@ spec:
         app: streamlit-ui
     spec:
       containers:
-      - name: flask
+      - name: streamlit-ui
         image: leticiamartins11/streamlit-ui:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8501

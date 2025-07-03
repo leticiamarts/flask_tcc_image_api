@@ -1,6 +1,6 @@
 from flask import Blueprint, request, send_file
-from api.services.image_service import process_image
-from api.utils.image_utils import read_image_from_bytes, image_to_bytes
+from services.image_service import process_image
+from utils.image_utils import read_image_from_bytes, image_to_bytes
 
 image_bp = Blueprint('image', __name__)
 

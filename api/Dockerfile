@@ -4,4 +4,4 @@ COPY . .
 RUN pip install -r requirements.txt
 RUN pip install pytest pytest-mock
 EXPOSE 5000
-CMD ["python", "-m", "api.app"]
+CMD ["python", "app.py"]
