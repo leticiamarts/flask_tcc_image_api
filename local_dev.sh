@@ -37,6 +37,10 @@ k3d cluster create $CLUSTER_NAME --servers 1 --agents 1 \
 echo "[INFO] Aguardando o cluster iniciar..."
 sleep 10
 
+echo "[INFO] Rotulando nodes para ingress-nginx..."
+kubectl label node k3d-$CLUSTER_NAME-server-0 ingress-ready=true || true
+kubectl label node k3d-$CLUSTER_NAME-agent-0 ingress-ready=true || true
+
 echo "[INFO] Instalando ingress-nginx..."
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.12.3/deploy/static/provider/kind/deploy.yaml
 
