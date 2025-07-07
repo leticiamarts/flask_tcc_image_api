@@ -4,6 +4,9 @@ metadata:
   name: app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    #nginx.ingress.kubernetes.io/limit-connections: "20" -> para controle de tráfego no futuro (pode atrapalhar alguns testes de performance e etc mas pode ser bom para evitar ataques)
+    #nginx.ingress.kubernetes.io/limit-rps: "10" -> para controle de tráfego no futuro (pode atrapalhar alguns testes de performance e etc mas pode ser bom para evitar ataques)
+    #nginx.ingress.kubernetes.io/limit-burst-multiplier: "2" -> para controle de tráfego no futuro (pode atrapalhar alguns testes de performance e etc mas pode ser bom para evitar ataques)
 spec:
   rules:
   - http:

@@ -13,8 +13,33 @@ spec:
         app: flask-api
     spec:
       containers:
-      - name: flask-api
-        image: leticiamartins11/flask-api:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5000
+        - name: flask-api
+          image: leticiamartins11/flask-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: flask-api-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: flask-api
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+
