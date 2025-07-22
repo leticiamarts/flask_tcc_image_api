@@ -1,0 +1,35 @@
+name: On-Premise Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+jobs:
+  on-prem:
+    name: On-Premise CI on Self-Hosted Runner
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências da API
+        working-directory: ./api
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rodar testes com pytest
+        run: |
+          pytest -v tests/
+
+      - name: Build das imagens com Docker Compose
+        run: |
+          docker-compose build
