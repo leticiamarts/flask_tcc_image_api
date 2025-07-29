@@ -58,3 +58,8 @@ jobs:
       - name: Build das imagens com Docker Compose
         run: |
           docker-compose build
+
+
+      - name: Subir cluster local e expor com ngrok
+        run: |
+          .\local_dev.ps1
