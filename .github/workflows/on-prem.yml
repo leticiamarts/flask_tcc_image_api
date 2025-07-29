@@ -49,9 +49,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Rodar testes com pytest
+        working-directory: ./api
         run: |
           .\.venv\Scripts\Activate.ps1
-          pytest -v tests/
+          pytest -v ../tests/
+
 
       - name: Build das imagens com Docker Compose
         run: |
