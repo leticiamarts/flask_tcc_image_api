@@ -11,19 +11,24 @@ jobs:
     name: On-Premise CI on Self-Hosted Runner
     runs-on: self-hosted
 
+    defaults:
+      run:
+        shell: pwsh
+
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
       - name: Verificar/Instalar Python 3.11
         run: |
-          if command -v python3.11 &>/dev/null; then
-            echo "✅ Python 3.11 já está instalado: $(python3.11 --version)"
-          else
-            echo "⚠️ Python 3.11 não encontrado. Instalando com setup-python..."
-            echo "python-version=3.11" >> $GITHUB_ENV
-            echo "needs_python_install=true" >> $GITHUB_ENV
-          fi
+          $python = Get-Command python3.11 -ErrorAction SilentlyContinue
+          if ($python) {
+            Write-Host "✅ Python 3.11 já está instalado: $(python3.11 --version)"
+          } else {
+            Write-Host "⚠️ Python 3.11 não encontrado. Instalando com setup-python..."
+            "python-version=3.11" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+            "needs_python_install=true" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          }
 
       - name: Configurar Python com setup-python
         if: env.needs_python_install == 'true'
@@ -34,11 +39,11 @@ jobs:
       - name: Criar e ativar ambiente virtual, instalar dependências
         working-directory: ./api
         run: |
-          if [ ! -d ".venv" ]; then
-            python3.11 -m venv .venv
-          fi
+          if (-Not (Test-Path ".venv")) {
+            python -m venv .venv
+          }
 
-          source .venv/bin/activate || source .venv/Scripts/activate
+          .\.venv\Scripts\Activate.ps1
 
           pip install --upgrade pip
           pip install -r requirements.txt
@@ -46,7 +51,7 @@ jobs:
       - name: Rodar testes com pytest
         working-directory: ./api
         run: |
-          source .venv/bin/activate || source .venv/Scripts/activate
+          .\.venv\Scripts\Activate.ps1
           pytest -v tests/
 
       - name: Build das imagens com Docker Compose
