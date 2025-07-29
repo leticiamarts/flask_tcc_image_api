@@ -61,7 +61,7 @@ jobs:
 
 
       - name: Subir cluster on-prem
-        shell: 'C:\\Program Files\\Git\\bin\\bash.exe' {0}
+        shell: 'C:\\Program Files\\Git\\bin\\bash.exe'
         run: |
           chmod +x ./local_dev.sh
           ./local_dev.sh
