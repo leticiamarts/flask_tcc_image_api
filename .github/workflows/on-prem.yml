@@ -60,6 +60,9 @@ jobs:
           docker-compose build
 
 
-      - name: Subir cluster local e expor com ngrok
+      - name: Subir cluster on-prem
+        shell: bash
         run: |
-          .\local_dev.ps1
+          chmod +x ./local_dev.sh
+          ./local_dev.sh
+
