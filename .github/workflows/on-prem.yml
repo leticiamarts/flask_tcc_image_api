@@ -15,19 +15,41 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Configurar Python
+      - name: Verificar/Instalar Python 3.11
+        shell: bash
+        run: |
+          if command -v python3.11 &>/dev/null; then
+            echo "✅ Python 3.11 já está instalado: $(python3.11 --version)"
+          else
+            echo "⚠️ Python 3.11 não encontrado. Instalando com setup-python..."
+            echo "python-version=3.11" >> $GITHUB_ENV
+            echo "needs_python_install=true" >> $GITHUB_ENV
+          fi
+
+      - name: Configurar Python com setup-python
+        if: env.needs_python_install == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Instalar dependências da API
+      - name: Criar e ativar ambiente virtual, instalar dependências
         working-directory: ./api
+        shell: bash
         run: |
+          if [ ! -d ".venv" ]; then
+            python3.11 -m venv .venv
+          fi
+
+          source .venv/bin/activate || source .venv/Scripts/activate
+
           pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Rodar testes com pytest
+        working-directory: ./api
+        shell: bash
         run: |
+          source .venv/bin/activate || source .venv/Scripts/activate
           pytest -v tests/
 
       - name: Build das imagens com Docker Compose
