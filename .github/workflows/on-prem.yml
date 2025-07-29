@@ -61,8 +61,8 @@ jobs:
 
 
       - name: Subir cluster on-prem
-        shell: 'C:\\Program Files\\Git\\bin\\bash.exe'
+        shell: powershell
         run: |
-          chmod +x ./local_dev.sh
-          ./local_dev.sh
+          & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh'
+
 
