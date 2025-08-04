@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from flask import request
-from api.utils.image_utils import image_to_bytes
+from utils.image_utils import image_to_bytes
 
 def rotate_image(image, angle):
     (h, w) = image.shape[:2]

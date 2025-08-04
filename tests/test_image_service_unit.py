@@ -83,4 +83,3 @@ def test_process_image_crop(sample_image):
 def test_process_image_invalid_operation(sample_image):
     with pytest.raises(ValueError, match="Operação inválida"):
         image_service.process_image(sample_image, 'operacao_invalida', {})
-
