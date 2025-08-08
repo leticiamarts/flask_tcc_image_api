@@ -42,6 +42,17 @@ jobs:
         run: |
           gcloud container clusters get-credentials flask-streamlit-cluster --zone ${{ secrets.GCP_ZONE }}
 
+      - name: Install NGINX Ingress Controller
+        run: |
+          kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
+          # aguardar o controller ficar pronto
+          kubectl wait --namespace ingress-nginx \
+            --for=condition=ready pod \
+            --selector=app.kubernetes.io/component=controller \
+            --timeout=180s
+
+
+
       - name: Apply Kubernetes manifests
         run: |
           kubectl apply -f k8s/flask-deployment.yaml
