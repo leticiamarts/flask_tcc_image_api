@@ -41,6 +41,11 @@ jobs:
       - name: Get GKE credentials
         run: |
           gcloud container clusters get-credentials flask-streamlit-cluster --zone ${{ secrets.GCP_ZONE }}
+      
+      - name: Update Google Cloud SDK
+        run: |
+          gcloud components update --quiet
+
 
       - name: Install NGINX Ingress Controller
         run: |
@@ -50,7 +55,6 @@ jobs:
             --for=condition=ready pod \
             --selector=app.kubernetes.io/component=controller \
             --timeout=180s
-
 
 
       - name: Apply Kubernetes manifests
