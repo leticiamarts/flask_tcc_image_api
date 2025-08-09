@@ -24,6 +24,13 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Update Google Cloud SDK
+        run: |
+          gcloud components update --quiet
+
+      - name: Set USE_GKE_GCLOUD_AUTH_PLUGIN env var
+        run: echo "USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> $GITHUB_ENV
+
       - name: Create GKE cluster
         run: |
           gcloud container clusters describe flask-streamlit-cluster --zone ${{ secrets.GCP_ZONE }} --format="value(name)" || \
@@ -41,10 +48,6 @@ jobs:
       - name: Get GKE credentials
         run: |
           gcloud container clusters get-credentials flask-streamlit-cluster --zone ${{ secrets.GCP_ZONE }}
-      
-      - name: Update Google Cloud SDK
-        run: |
-          gcloud components update --quiet
 
 
       - name: Install NGINX Ingress Controller
