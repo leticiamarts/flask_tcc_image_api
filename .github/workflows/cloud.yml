@@ -52,7 +52,7 @@ jobs:
 
       - name: Install NGINX Ingress Controller
         run: |
-          kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
+          kubectl apply --validate=false -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
           # aguardar o controller ficar pronto
           kubectl wait --namespace ingress-nginx \
             --for=condition=ready pod \
