@@ -27,6 +27,7 @@ jobs:
       - name: Update Google Cloud SDK
         run: |
           gcloud components update --quiet
+          gcloud components install gke-gcloud-auth-plugin --quiet
 
       - name: Set USE_GKE_GCLOUD_AUTH_PLUGIN env var
         run: echo "USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> $GITHUB_ENV
