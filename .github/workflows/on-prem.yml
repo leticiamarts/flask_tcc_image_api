@@ -63,20 +63,40 @@ jobs:
       - name: Subir cluster on-prem
         shell: powershell
         run: |
-          & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh' | Tee-Object -Variable scriptOutput
+          $bash = 'C:\Program Files\Git\bin\bash.exe'
+          $script = '${{ github.workspace }}\local_dev.sh'
 
-          if ($scriptOutput -match '\[INFO\] Você verá um link HTTPS para acessar sua aplicação!') {
-            Write-Host "Ingress detectado! Aguardando 2 minutos..."
-            Start-Sleep -Seconds 120
+          Write-Host "Iniciando script em background..."
+          $process = Start-Process $bash -ArgumentList $script -NoNewWindow -RedirectStandardOutput "output.log" -RedirectStandardError "error.log" -PassThru
 
-            $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
-            if ($health.StatusCode -eq 200) {
-              Write-Host "Aplicação respondeu com sucesso!"
-            } else {
-              Write-Error "Healthcheck falhou com status $($health.StatusCode)"
-              exit 1
-            }
+          Write-Host "Monitorando saída..."
+          $found = $false
+          while (-not $found -and !$process.HasExited) {
+              Get-Content output.log -Tail 10 | ForEach-Object {
+                  if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
+                      $found = $true
+                  }
+              }
+              Start-Sleep -Seconds 5
+          }
+
+          if ($found) {
+              Write-Host "Ingress detectado! Aguardando 5 minutos..."
+              Start-Sleep -Seconds 300
+
+              $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
+              if ($health.StatusCode -eq 200) {
+                  Write-Host "Aplicação respondeu com sucesso!"
+              } else {
+                  Write-Error "Healthcheck falhou com status $($health.StatusCode)"
+                  exit 1
+              }
+
+              # Finaliza o processo do script
+              Write-Host "Finalizando script local_dev.sh..."
+              Stop-Process -Id $process.Id -Force
           } else {
-            Write-Error "Mensagem de finalização não foi encontrada no output do script"
-            exit 1
+              Write-Error "Mensagem de finalização não foi encontrada no output do script"
+              Stop-Process -Id $process.Id -Force
+              exit 1
           }
