@@ -69,25 +69,29 @@ jobs:
           Write-Host "Iniciando script em background..."
           $process = Start-Process $bash -ArgumentList $script -NoNewWindow -RedirectStandardOutput "output.log" -RedirectStandardError "error.log" -PassThru
 
-          Write-Host "Monitorando saída..."
+          Write-Host "Monitorando cluster e Ingress..."
           $found = $false
-          $ngrokUrl = ""
-
           while (-not $found -and !$process.HasExited) {
               Get-Content output.log -Tail 10 | ForEach-Object {
                   if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
                       $found = $true
-                  }
-                  # Regex para capturar URL do ngrok (https://xxx.ngrok.io)
-                  if ($_ -match "(https://[a-z0-9\-]+\.ngrok\.io)") {
-                      $ngrokUrl = $matches[1]
                   }
               }
               Start-Sleep -Seconds 5
           }
 
           if ($found) {
-              Write-Host "Ingress detectado! Link ngrok: $ngrokUrl"
+              Write-Host "Ingress detectado! Iniciando ngrok como daemon..."
+              Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
+
+              Write-Host "Aguardando 30s para ngrok iniciar..."
+              Start-Sleep -Seconds 30
+
+              # Captura URL do ngrok
+              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
+              $ngrokUrl = $tunnels.tunnels[0].public_url
+              Write-Host "Link ngrok capturado: $ngrokUrl"
+
               Write-Host "Aguardando 2 minutos para estabilidade..."
               Start-Sleep -Seconds 120
 
@@ -99,7 +103,6 @@ jobs:
                   exit 1
               }
 
-              # Finaliza o processo do script
               Write-Host "Finalizando script local_dev.sh..."
               Stop-Process -Id $process.Id -Force
           } else {
