@@ -71,18 +71,25 @@ jobs:
 
           Write-Host "Monitorando saída..."
           $found = $false
+          $ngrokUrl = ""
+
           while (-not $found -and !$process.HasExited) {
               Get-Content output.log -Tail 10 | ForEach-Object {
                   if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
                       $found = $true
+                  }
+                  # Regex para capturar URL do ngrok (https://xxx.ngrok.io)
+                  if ($_ -match "(https://[a-z0-9\-]+\.ngrok\.io)") {
+                      $ngrokUrl = $matches[1]
                   }
               }
               Start-Sleep -Seconds 5
           }
 
           if ($found) {
-              Write-Host "Ingress detectado! Aguardando 5 minutos..."
-              Start-Sleep -Seconds 300
+              Write-Host "Ingress detectado! Link ngrok: $ngrokUrl"
+              Write-Host "Aguardando 2 minutos para estabilidade..."
+              Start-Sleep -Seconds 120
 
               $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
               if ($health.StatusCode -eq 200) {
