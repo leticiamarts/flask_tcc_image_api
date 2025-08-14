@@ -64,57 +64,40 @@ jobs:
           $bash = 'C:\Program Files\Git\bin\bash.exe'
           $script = '${{ github.workspace }}\local_dev.sh'
 
-          Write-Host "Iniciando script em background..."
+          Write-Host "Iniciando script local_dev.sh..."
           $process = Start-Process $bash -ArgumentList $script -NoNewWindow -RedirectStandardOutput "output.log" -RedirectStandardError "error.log" -PassThru
 
-          Write-Host "Monitorando cluster e Ingress..."
-          $found = $false
+          Write-Host "Aguardando 60s para cluster e ingress subirem..."
+          Start-Sleep -Seconds 60
 
-          while (-not $found -and !$process.HasExited) {
-              Get-Content output.log -Tail 10 | ForEach-Object {
-                  if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
-                      $found = $true
-                  }
-              }
-              Start-Sleep -Seconds 5
-          }
+          Write-Host "Iniciando ngrok como daemon..."
+          Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
 
-          if ($found) {
-              Write-Host "Ingress detectado! Iniciando ngrok como daemon..."
+          Write-Host "Aguardando 30s para ngrok iniciar completamente..."
+          Start-Sleep -Seconds 30
 
-              # Inicia ngrok em modo daemon (nome do túnel 'flask')
-              Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
-
-              Write-Host "Aguardando 30s para ngrok iniciar completamente..."
-              Start-Sleep -Seconds 30
-
-              # Captura URL do ngrok pelo endpoint HTTP
-              try {
-                  $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
-                  $ngrokUrl = $tunnels.tunnels[0].public_url
-                  Write-Host "Link ngrok capturado: $ngrokUrl"
-              } catch {
-                  Write-Error "Não foi possível capturar a URL do ngrok. Verifique se ngrok iniciou corretamente."
-                  Stop-Process -Id $process.Id -Force
-                  exit 1
-              }
-
-              Write-Host "Aguardando 2 minutos para estabilidade..."
-              Start-Sleep -Seconds 120
-
-              $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
-              if ($health.StatusCode -eq 200) {
-                  Write-Host "Aplicação respondeu com sucesso!"
-              } else {
-                  Write-Error "Healthcheck falhou com status $($health.StatusCode)"
-                  Stop-Process -Id $process.Id -Force
-                  exit 1
-              }
-
-              Write-Host "Finalizando script local_dev.sh..."
-              Stop-Process -Id $process.Id -Force
-          } else {
-              Write-Error "Mensagem de inicialização do cluster não foi encontrada no output do script"
+          # Captura URL do ngrok pelo endpoint HTTP
+          try {
+              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
+              $ngrokUrl = $tunnels.tunnels[0].public_url
+              Write-Host "Link ngrok capturado: $ngrokUrl"
+          } catch {
+              Write-Error "Não foi possível capturar a URL do ngrok. Verifique se ngrok iniciou corretamente."
               Stop-Process -Id $process.Id -Force
               exit 1
           }
+
+          Write-Host "Aguardando 2 minutos para estabilidade..."
+          Start-Sleep -Seconds 120
+
+          $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
+          if ($health.StatusCode -eq 200) {
+              Write-Host "Aplicação respondeu com sucesso!"
+          } else {
+              Write-Error "Healthcheck falhou com status $($health.StatusCode)"
+              Stop-Process -Id $process.Id -Force
+              exit 1
+          }
+
+          Write-Host "Finalizando script local_dev.sh..."
+          Stop-Process -Id $process.Id -Force
