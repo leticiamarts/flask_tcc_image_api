@@ -69,6 +69,8 @@ jobs:
 
           Write-Host "Monitorando cluster e Ingress..."
           $found = $false
+          $ngrokUrl = ""
+
           while (-not $found -and !$process.HasExited) {
               Get-Content output.log -Tail 10 | ForEach-Object {
                   if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
@@ -79,17 +81,15 @@ jobs:
           }
 
           if ($found) {
-              Write-Host "Ingress detectado! Capturando link ngrok..."
+              Write-Host "Ingress detectado! Iniciando captura da URL ngrok..."
+              
+              Write-Host "Aguardando 30s para ngrok iniciar completamente..."
+              Start-Sleep -Seconds 30
 
-              Start-Sleep -Seconds 10 # pequena espera para ngrok inicializar API
-
-              try {
-                  $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
-                  $ngrokUrl = $tunnels.tunnels[0].public_url
-                  Write-Host "Link ngrok capturado: $ngrokUrl"
-              } catch {
-                  Write-Warning "Não foi possível capturar a URL do ngrok."
-              }
+              # Captura URL do ngrok
+              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
+              $ngrokUrl = $tunnels.tunnels[0].public_url
+              Write-Host "Link ngrok capturado: $ngrokUrl"
 
               Write-Host "Aguardando 2 minutos para estabilidade..."
               Start-Sleep -Seconds 120
@@ -104,8 +104,6 @@ jobs:
 
               Write-Host "Finalizando script local_dev.sh..."
               Stop-Process -Id $process.Id -Force
-
-              Write-Host "Ngrok continuará rodando em background."
           } else {
               Write-Error "Mensagem de inicialização do ngrok não foi encontrada no output do script"
               Stop-Process -Id $process.Id -Force
