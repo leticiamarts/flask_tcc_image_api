@@ -59,5 +59,4 @@ jobs:
       - name: Subir cluster on-prem
         shell: powershell
         run: |
-          & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh'
           & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh' | Tee-Object -Variable scriptOutput
