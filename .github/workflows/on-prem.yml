@@ -69,11 +69,10 @@ jobs:
 
           Write-Host "Monitorando cluster e Ingress..."
           $found = $false
-          $ngrokUrl = ""
 
           while (-not $found -and !$process.HasExited) {
               Get-Content output.log -Tail 10 | ForEach-Object {
-                  if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
+                  if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
                       $found = $true
                   }
               }
@@ -81,15 +80,24 @@ jobs:
           }
 
           if ($found) {
-              Write-Host "Ingress detectado! Iniciando captura da URL ngrok..."
-              
+              Write-Host "Ingress detectado! Iniciando ngrok como daemon..."
+
+              # Inicia ngrok em modo daemon (nome do túnel 'flask')
+              Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
+
               Write-Host "Aguardando 30s para ngrok iniciar completamente..."
               Start-Sleep -Seconds 30
 
-              # Captura URL do ngrok
-              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
-              $ngrokUrl = $tunnels.tunnels[0].public_url
-              Write-Host "Link ngrok capturado: $ngrokUrl"
+              # Captura URL do ngrok pelo endpoint HTTP
+              try {
+                  $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
+                  $ngrokUrl = $tunnels.tunnels[0].public_url
+                  Write-Host "Link ngrok capturado: $ngrokUrl"
+              } catch {
+                  Write-Error "Não foi possível capturar a URL do ngrok. Verifique se ngrok iniciou corretamente."
+                  Stop-Process -Id $process.Id -Force
+                  exit 1
+              }
 
               Write-Host "Aguardando 2 minutos para estabilidade..."
               Start-Sleep -Seconds 120
@@ -99,13 +107,14 @@ jobs:
                   Write-Host "Aplicação respondeu com sucesso!"
               } else {
                   Write-Error "Healthcheck falhou com status $($health.StatusCode)"
+                  Stop-Process -Id $process.Id -Force
                   exit 1
               }
 
               Write-Host "Finalizando script local_dev.sh..."
               Stop-Process -Id $process.Id -Force
           } else {
-              Write-Error "Mensagem de inicialização do ngrok não foi encontrada no output do script"
+              Write-Error "Mensagem de inicialização do cluster não foi encontrada no output do script"
               Stop-Process -Id $process.Id -Force
               exit 1
           }
