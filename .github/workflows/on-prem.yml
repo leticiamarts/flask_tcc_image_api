@@ -50,13 +50,13 @@ jobs:
         run: |
           .\.venv\Scripts\Activate.ps1
           pytest -v ../tests/
-          
+
       #- name: Build das imagens com Docker Compose
       #  shell: powershell
       #  run: |
       #    docker-compose build
 
-      - name: Subir cluster on-prem
+      - name: Subir cluster on-prem e iniciar ngrok
         shell: powershell
         run: |
           $bash = 'C:\Program Files\Git\bin\bash.exe'
@@ -65,15 +65,19 @@ jobs:
           Write-Host "Iniciando script local_dev.sh sem bloquear..."
           $process = Start-Process $bash -ArgumentList $script -NoNewWindow -PassThru
 
-          Write-Host "Monitorando ngrok.log até detectar [INFO] Ngrok iniciado em background..."
+          Write-Host "Iniciando ngrok separadamente..."
+          $ngrokProcess = Start-Process ngrok.exe `
+              -ArgumentList "http 8000 --log=stdout --log-level=info" `
+              -NoNewWindow `
+              -RedirectStandardOutput "ngrok_out.log" `
+              -RedirectStandardError "ngrok_err.log" `
+              -PassThru
 
-          # Inicia ngrok separadamente
-          Start-Process ngrok.exe -ArgumentList "http 8000 --log=stdout --log-level=info" -NoNewWindow -RedirectStandardOutput "ngrok.log" -RedirectStandardError "ngrok.log" -PassThru
-
+          Write-Host "Monitorando ngrok_out.log até detectar [INFO] Ngrok iniciado em background..."
           $ngrokReady = $false
           while (-not $ngrokReady) {
-              if (Test-Path ngrok.log) {
-                  Get-Content ngrok.log -Tail 10 | ForEach-Object {
+              if (Test-Path "ngrok_out.log") {
+                  Get-Content "ngrok_out.log" -Tail 10 | ForEach-Object {
                       if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
                           $ngrokReady = $true
                       }
@@ -102,3 +106,6 @@ jobs:
               Write-Error "Healthcheck falhou com status $($health.StatusCode)"
               exit 1
           }
+
+          Write-Host "Finalizando script local_dev.sh..."
+          Stop-Process -Id $process.Id -Force
