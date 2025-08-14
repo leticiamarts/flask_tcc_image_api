@@ -56,56 +56,8 @@ jobs:
       #  run: |
       #    docker-compose build
 
-      - name: Subir cluster on-prem e iniciar ngrok
+      - name: Subir cluster on-prem
         shell: powershell
         run: |
-          $bash = 'C:\Program Files\Git\bin\bash.exe'
-          $script = '${{ github.workspace }}\local_dev.sh'
-
-          Write-Host "Iniciando script local_dev.sh sem bloquear..."
-          $process = Start-Process $bash -ArgumentList $script -NoNewWindow -PassThru
-
-          Write-Host "Iniciando ngrok separadamente..."
-          $ngrokProcess = Start-Process ngrok.exe `
-              -ArgumentList "http 8000 --log=stdout --log-level=info" `
-              -NoNewWindow `
-              -RedirectStandardOutput "ngrok_out.log" `
-              -RedirectStandardError "ngrok_err.log" `
-              -PassThru
-
-          Write-Host "Monitorando ngrok_out.log até detectar [INFO] Ngrok iniciado em background..."
-          $ngrokReady = $false
-          while (-not $ngrokReady) {
-              if (Test-Path "ngrok_out.log") {
-                  Get-Content "ngrok_out.log" -Tail 10 | ForEach-Object {
-                      if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
-                          $ngrokReady = $true
-                      }
-                  }
-              }
-              Start-Sleep -Seconds 5
-          }
-
-          Write-Host "Ngrok iniciado, capturando URL..."
-          try {
-              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
-              $ngrokUrl = $tunnels.tunnels[0].public_url
-              Write-Host "Link ngrok capturado: $ngrokUrl"
-          } catch {
-              Write-Error "Não foi possível capturar a URL do ngrok. Verifique se ngrok iniciou corretamente."
-              exit 1
-          }
-
-          Write-Host "Aguardando 2 minutos para estabilidade..."
-          Start-Sleep -Seconds 120
-
-          $health = Invoke-WebRequest -Uri http://localhost:8000/health -UseBasicParsing -TimeoutSec 10
-          if ($health.StatusCode -eq 200) {
-              Write-Host "Aplicação respondeu com sucesso!"
-          } else {
-              Write-Error "Healthcheck falhou com status $($health.StatusCode)"
-              exit 1
-          }
-
-          Write-Host "Finalizando script local_dev.sh..."
-          Stop-Process -Id $process.Id -Force
+          & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh'
+          & 'C:\Program Files\Git\bin\bash.exe' '${{ github.workspace }}\local_dev.sh' | Tee-Object -Variable scriptOutput

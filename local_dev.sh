@@ -57,4 +57,6 @@ kubectl apply -f k8s/streamlit-deployment.yaml
 kubectl apply -f k8s/streamlit-service.yaml
 kubectl apply -f k8s/ingress.yaml
 
-echo "[INFO] Cluster e Kubernetes aplicados com sucesso!"
+echo "[INFO] Favor expor a aplicação rodando no terminal bash: ngrok http 8000"
+echo "[INFO] Em seguida você verá um link HTTPS para acessar a aplicação!"
+
