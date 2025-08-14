@@ -40,9 +40,7 @@ jobs:
           if (-Not (Test-Path ".venv")) {
             python -m venv .venv
           }
-
           .\.venv\Scripts\Activate.ps1
-
           pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -65,13 +63,7 @@ jobs:
           $script = '${{ github.workspace }}\local_dev.sh'
 
           Write-Host "Iniciando script local_dev.sh..."
-          $process = Start-Process $bash -ArgumentList $script -NoNewWindow -RedirectStandardOutput "output.log" -RedirectStandardError "error.log" -PassThru
-
-          Write-Host "Aguardando 60s para cluster e ingress subirem..."
-          Start-Sleep -Seconds 60
-
-          Write-Host "Iniciando ngrok como daemon..."
-          Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
+          Start-Process $bash -ArgumentList $script -NoNewWindow -Wait
 
           Write-Host "Aguardando 30s para ngrok iniciar completamente..."
           Start-Sleep -Seconds 30
@@ -83,7 +75,6 @@ jobs:
               Write-Host "Link ngrok capturado: $ngrokUrl"
           } catch {
               Write-Error "Não foi possível capturar a URL do ngrok. Verifique se ngrok iniciou corretamente."
-              Stop-Process -Id $process.Id -Force
               exit 1
           }
 
@@ -95,9 +86,5 @@ jobs:
               Write-Host "Aplicação respondeu com sucesso!"
           } else {
               Write-Error "Healthcheck falhou com status $($health.StatusCode)"
-              Stop-Process -Id $process.Id -Force
               exit 1
           }
-
-          Write-Host "Finalizando script local_dev.sh..."
-          Stop-Process -Id $process.Id -Force
