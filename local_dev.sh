@@ -58,4 +58,5 @@ kubectl apply -f k8s/streamlit-service.yaml
 kubectl apply -f k8s/ingress.yaml
 
 echo "[INFO] Expondo sua aplicação na internet com ngrok..."
-echo "[INFO] Você verá um link HTTPS para acessar sua aplicação!"
+nohup ngrok http 8000 > ngrok.log 2>&1 &
+echo "[INFO] Ngrok iniciado em background!"

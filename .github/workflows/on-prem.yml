@@ -20,9 +20,9 @@ jobs:
         run: |
           $python = Get-Command python3.11 -ErrorAction SilentlyContinue
           if ($python) {
-            Write-Host "✅ Python 3.11 já está instalado: $(python3.11 --version)"
+            Write-Host "Python 3.11 já está instalado: $(python3.11 --version)"
           } else {
-            Write-Host "⚠️ Python 3.11 não encontrado. Instalando com setup-python..."
+            Write-Host "Python 3.11 não encontrado. Instalando com setup-python..."
             "python-version=3.11" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
             "needs_python_install=true" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           }
@@ -53,12 +53,10 @@ jobs:
           .\.venv\Scripts\Activate.ps1
           pytest -v ../tests/
 
-
-      - name: Build das imagens com Docker Compose
-        shell: powershell
-        run: |
-          docker-compose build
-
+      #- name: Build das imagens com Docker Compose
+      #  shell: powershell
+      #  run: |
+      #    docker-compose build
 
       - name: Subir cluster on-prem
         shell: powershell
@@ -73,7 +71,7 @@ jobs:
           $found = $false
           while (-not $found -and !$process.HasExited) {
               Get-Content output.log -Tail 10 | ForEach-Object {
-                  if ($_ -match "\[INFO\] Você verá um link HTTPS para acessar sua aplicação!") {
+                  if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
                       $found = $true
                   }
               }
@@ -81,16 +79,17 @@ jobs:
           }
 
           if ($found) {
-              Write-Host "Ingress detectado! Iniciando ngrok como daemon..."
-              Start-Process ngrok.exe -ArgumentList "start flask --log=stdout --log-level=info" -NoNewWindow -PassThru
+              Write-Host "Ingress detectado! Capturando link ngrok..."
 
-              Write-Host "Aguardando 30s para ngrok iniciar..."
-              Start-Sleep -Seconds 30
+              Start-Sleep -Seconds 10 # pequena espera para ngrok inicializar API
 
-              # Captura URL do ngrok
-              $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
-              $ngrokUrl = $tunnels.tunnels[0].public_url
-              Write-Host "Link ngrok capturado: $ngrokUrl"
+              try {
+                  $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
+                  $ngrokUrl = $tunnels.tunnels[0].public_url
+                  Write-Host "Link ngrok capturado: $ngrokUrl"
+              } catch {
+                  Write-Warning "Não foi possível capturar a URL do ngrok."
+              }
 
               Write-Host "Aguardando 2 minutos para estabilidade..."
               Start-Sleep -Seconds 120
@@ -105,8 +104,10 @@ jobs:
 
               Write-Host "Finalizando script local_dev.sh..."
               Stop-Process -Id $process.Id -Force
+
+              Write-Host "Ngrok continuará rodando em background."
           } else {
-              Write-Error "Mensagem de finalização não foi encontrada no output do script"
+              Write-Error "Mensagem de inicialização do ngrok não foi encontrada no output do script"
               Stop-Process -Id $process.Id -Force
               exit 1
           }
