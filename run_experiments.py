@@ -4,11 +4,11 @@ import os
 import argparse
 from datetime import datetime
 from experiments import metrics_reporter as mr
+import threading
 
 def run_experiment(load_type, namespace, label_selector, duration, load_args):
     print(f"[INFO] Iniciando experimento com carga: {load_type}")
 
-    # Importa o módulo certo
     if load_type == "requests":
         load_module = importlib.import_module("experiments.requests_load")
     elif load_type == "selenium":
@@ -16,13 +16,33 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args):
     else:
         raise ValueError("Tipo de carga inválido. Use 'requests' ou 'selenium'.")
 
-    # Coleta métricas enquanto a carga roda
-    start_time = time.time()
-    metrics_samples = mr.collect_during_test(duration, interval=5, namespace=namespace)
+    events_samples = []
 
-    # Executa teste de carga (passando args específicos)
+    # Função de monitoramento
+    def monitor_metrics():
+        nonlocal events_samples
+        events_samples = mr.collect_during_test(
+            namespace=namespace,
+            deployment_name="flask-api",
+            duration_seconds=max(duration, 20),  # Garante pelo menos 20s de coleta
+            interval_seconds=1
+        )
+
+    # Inicia thread de monitoramento **antes** do load test
+    monitor_thread = threading.Thread(target=monitor_metrics)
+    monitor_thread.start()
+
+    # Pequena espera para garantir que coleta começou
+    time.sleep(1)
+
+    # Executa teste de carga na thread principal
+    start_time = time.time()
     latencies, success_count, total_count = load_module.run_load_test(**load_args)
     end_time = time.time()
+
+    monitor_thread.join()
+
+    print(f"[DEBUG] Total de eventos coletados: {len(events_samples)}")
 
     # Monta métricas finais
     metrics = {
@@ -41,9 +61,10 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args):
     os.makedirs("results", exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     mr.save_metrics_json(metrics, prefix=f"results/metrics_{load_type}")
-    mr.save_metrics_csv(metrics_samples, f"results/k8s_samples_{load_type}_{timestamp}.csv")
+    mr.save_metrics_csv(events_samples, f"results/k8s_samples_{load_type}_{timestamp}.csv")
 
     print(f"[INFO] Experimento concluído.")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -51,7 +72,7 @@ if __name__ == "__main__":
     parser.add_argument("--autoscaling", choices=["true", "false"], required=True, help="HPA ativo ou não")
     parser.add_argument("--load_type", choices=["requests", "selenium"], required=True, help="Tipo de teste de carga")
     parser.add_argument("--namespace", default="default", help="Namespace do Kubernetes")
-    parser.add_argument("--label_selector", default="app=myapp", help="Label selector dos pods")
+    parser.add_argument("--label_selector", default="app=flask-api", help="Label selector dos pods")
     parser.add_argument("--duration", type=int, default=60, help="Duração do teste em segundos")
 
     # Parâmetros específicos para cada tipo de carga
@@ -64,7 +85,6 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Monta argumentos específicos para o teste de carga
     if args.load_type == "requests":
         load_args = {
             "url": args.url,
@@ -88,4 +108,3 @@ if __name__ == "__main__":
         duration=args.duration,
         load_args=load_args
     )
-

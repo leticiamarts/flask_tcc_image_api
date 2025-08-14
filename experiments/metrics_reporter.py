@@ -5,6 +5,7 @@ import subprocess
 import csv
 import time
 from kubernetes import client, config
+import logging
 
 # =========================
 # Funções utilitárias
@@ -21,12 +22,19 @@ def save_metrics_json(metrics, prefix="metrics"):
 
 def save_metrics_csv(samples, filename):
     if not samples:
+        keys = ["timestamp", "event_type", "replica_count", "replicas_before", "replicas_after", "avg_cpu_pct", "notes"]
+        with open(filename, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=keys)
+            writer.writeheader()
+        print(f"[INFO] Nenhum evento coletado, CSV vazio criado: {filename}")
         return
+
     keys = samples[0].keys()
     with open(filename, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=keys)
         writer.writeheader()
         writer.writerows(samples)
+    print(f"[INFO] CSV de eventos salvo em {filename}")
 
 # =========================
 # Métricas de aplicação
@@ -55,10 +63,6 @@ def calculate_success_rate(success_count, total_count):
 # =========================
 
 def get_k8s_metrics_top(namespace=None):
-    """
-    Coleta métricas de pods via `kubectl top pods`.
-    Necessita do metrics-server instalado.
-    """
     cmd = ["kubectl", "top", "pods", "--no-headers"]
     if namespace:
         cmd.extend(["-n", namespace])
@@ -101,10 +105,6 @@ def get_k8s_metrics_top(namespace=None):
         return None
 
 def get_k8s_resource_usage(namespace, label_selector):
-    """
-    Lista pods pelo label_selector e retorna contagem de réplicas.
-    Coleta CPU/memória total via kubectl top.
-    """
     config.load_kube_config()
     v1 = client.CoreV1Api()
     pods = v1.list_namespaced_pod(namespace, label_selector=label_selector)
@@ -116,16 +116,93 @@ def get_k8s_resource_usage(namespace, label_selector):
         "mem_total_mi": usage_top["mem_total_mi"] if usage_top else 0
     }
 
-def collect_during_test(duration, interval=5, namespace=None):
+logging.basicConfig(filename="k8s_test_events.log", level=logging.INFO, format="%(asctime)s - %(message)s")
+
+# =========================
+# Coleta de métricas
+# =========================
+
+def collect_snapshot(namespace="default", deployment_name="flask-api"):
     """
-    Coleta métricas repetidamente durante o teste.
+    Retorna eventos e métricas do cluster no instante atual.
+    Cada chamada é rápida e independente, ideal para monitoramento contínuo.
     """
-    samples = []
+    config.load_kube_config()
+    v1 = client.CoreV1Api()
+    apps_v1 = client.AppsV1Api()
+    custom_api = client.CustomObjectsApi()
+
+    events = []
+    replicas = None
+
+    # Deployment info
+    try:
+        deployment = apps_v1.read_namespaced_deployment(deployment_name, namespace)
+        replicas = deployment.status.replicas or 0
+    except Exception as e:
+        logging.warning(f"Erro ao obter deployment {deployment_name}: {e}")
+
+    # Métricas pods
+    try:
+        metrics = custom_api.list_namespaced_custom_object(
+            group="metrics.k8s.io",
+            version="v1beta1",
+            namespace=namespace,
+            plural="pods"
+        )
+    except Exception as e:
+        logging.warning(f"Erro ao coletar métricas: {e}")
+        return []
+
+    cpu_totals = []
+    for pod in metrics.get("items", []):
+        try:
+            cpu_usage_str = pod["containers"][0]["usage"]["cpu"]
+            if cpu_usage_str.endswith("n"):
+                cpu_millicores = int(cpu_usage_str[:-1]) / 1_000_000
+            elif cpu_usage_str.endswith("m"):
+                cpu_millicores = int(cpu_usage_str[:-1])
+            else:
+                cpu_millicores = int(cpu_usage_str) * 1000
+            cpu_totals.append(cpu_millicores)
+        except Exception as e:
+            logging.warning(f"Erro ao processar CPU do pod {pod['metadata']['name']}: {e}")
+
+    if cpu_totals:
+        avg_cpu = sum(cpu_totals)/len(cpu_totals)
+        cpu_pct = (avg_cpu/1000)*100
+        if cpu_pct >= 70:
+            events.append({
+                "timestamp": datetime.datetime.utcnow().isoformat(),
+                "event_type": "cpu_alert",
+                "avg_cpu_pct": cpu_pct,
+                "replica_count": replicas,
+                "notes": "CPU media >=70%"
+            })
+        if cpu_pct >= 100:
+            events.append({
+                "timestamp": datetime.datetime.utcnow().isoformat(),
+                "event_type": "cpu_critical",
+                "avg_cpu_pct": cpu_pct,
+                "replica_count": replicas,
+                "notes": "CPU >=100%"
+            })
+
+    return events
+
+def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=5):
+    """
+    Monitora métricas de CPU e eventos de scaling durante o teste.
+    Usa collect_snapshot em loop para criar eventos contínuos.
+    """
     start_time = time.time()
-    while time.time() - start_time < duration:
-        metrics = get_k8s_metrics_top(namespace)
-        if metrics:
-            metrics["timestamp"] = datetime.datetime.utcnow().isoformat()
-            samples.append(metrics)
-        time.sleep(interval)
-    return samples
+    events = []
+    logging.info("Iniciando coleta de métricas durante teste.")
+
+    while time.time() - start_time < duration_seconds:
+        snapshot_events = collect_snapshot(namespace, deployment_name)
+        events.extend(snapshot_events)
+        time.sleep(interval_seconds)
+    
+    print(f"[DEBUG] Total de eventos coletados: {len(events)}")
+    return events
