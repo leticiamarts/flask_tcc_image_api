@@ -57,6 +57,4 @@ kubectl apply -f k8s/streamlit-deployment.yaml
 kubectl apply -f k8s/streamlit-service.yaml
 kubectl apply -f k8s/ingress.yaml
 
-echo "[INFO] Expondo sua aplicação na internet com ngrok..."
-nohup ngrok http 8000 > ngrok.log 2>&1 &
-echo "[INFO] Ngrok iniciado em background!"
+echo "[INFO] Cluster e Kubernetes aplicados com sucesso!"

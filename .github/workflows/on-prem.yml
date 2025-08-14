@@ -50,7 +50,7 @@ jobs:
         run: |
           .\.venv\Scripts\Activate.ps1
           pytest -v ../tests/
-
+          
       #- name: Build das imagens com Docker Compose
       #  shell: powershell
       #  run: |
@@ -62,13 +62,27 @@ jobs:
           $bash = 'C:\Program Files\Git\bin\bash.exe'
           $script = '${{ github.workspace }}\local_dev.sh'
 
-          Write-Host "Iniciando script local_dev.sh..."
-          Start-Process $bash -ArgumentList $script -NoNewWindow -Wait
+          Write-Host "Iniciando script local_dev.sh sem bloquear..."
+          $process = Start-Process $bash -ArgumentList $script -NoNewWindow -PassThru
 
-          Write-Host "Aguardando 30s para ngrok iniciar completamente..."
-          Start-Sleep -Seconds 30
+          Write-Host "Monitorando ngrok.log até detectar [INFO] Ngrok iniciado em background..."
 
-          # Captura URL do ngrok pelo endpoint HTTP
+          # Inicia ngrok separadamente
+          Start-Process ngrok.exe -ArgumentList "http 8000 --log=stdout --log-level=info" -NoNewWindow -RedirectStandardOutput "ngrok.log" -RedirectStandardError "ngrok.log" -PassThru
+
+          $ngrokReady = $false
+          while (-not $ngrokReady) {
+              if (Test-Path ngrok.log) {
+                  Get-Content ngrok.log -Tail 10 | ForEach-Object {
+                      if ($_ -match "\[INFO\] Ngrok iniciado em background!") {
+                          $ngrokReady = $true
+                      }
+                  }
+              }
+              Start-Sleep -Seconds 5
+          }
+
+          Write-Host "Ngrok iniciado, capturando URL..."
           try {
               $tunnels = Invoke-RestMethod http://127.0.0.1:4040/api/tunnels
               $ngrokUrl = $tunnels.tunnels[0].public_url
