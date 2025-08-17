@@ -1,0 +1,268 @@
+{"timestamp": "2025-08-17T19:41:41.997590", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.311, "cpu_pct": 0.13113390000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:43.037277", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.311, "cpu_pct": 0.13113390000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:44.056246", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.311, "cpu_pct": 0.13113390000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:45.071722", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:46.084614", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:47.097788", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:48.110027", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:49.122726", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:50.135268", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:51.149917", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:52.163336", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:53.175837", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:54.188949", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:55.201529", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:56.218858", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:57.231242", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:58.243463", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.268, "cpu_pct": 0.1267603, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:41:59.255958", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:00.268619", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:01.282577", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:02.295177", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:03.308918", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:04.321417", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:05.335586", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:06.348381", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:07.361705", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:08.375856", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:09.388865", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:10.400735", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:11.413645", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:12.430469", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:13.444521", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.314, "cpu_pct": 0.131409, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:14.457951", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:15.473701", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:16.488358", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:17.507146", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:18.521258", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:19.534311", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:20.548342", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:21.560572", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:22.573110", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:23.585824", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:24.598917", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:25.613236", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:26.626074", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:27.641196", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:28.653780", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.313, "cpu_pct": 0.13127239999999998, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:29.668086", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:30.680585", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:31.692814", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:32.704980", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:33.716899", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:34.728821", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:35.746223", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:36.759854", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:37.778417", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:38.791082", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:39.804146", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:40.817210", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:41.830011", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:42.844115", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:43.860101", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:44.879158", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:45.892930", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:46.905657", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:47.921004", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:48.934423", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:49.947668", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:50.960780", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:51.973373", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:52.989783", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:54.004273", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:55.025783", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:56.038939", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:57.053506", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:58.068851", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.282, "cpu_pct": 0.1282311, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:42:59.087999", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:00.103231", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:01.120556", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:02.134849", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:03.152271", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:04.167789", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:05.185171", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:06.201494", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:07.216155", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:08.234702", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:09.251378", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:10.269009", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:11.287124", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:12.301399", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:13.319038", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.32, "cpu_pct": 0.1320128, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:14.335831", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:14.335831", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:14.335831", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:14.335831", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:15.351609", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:15.351609", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:15.351609", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:15.351609", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:16.368202", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:16.368202", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:16.368202", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:16.368202", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:17.387729", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:17.387729", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:17.387729", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:17.387729", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:18.402536", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:18.402536", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:18.402536", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:18.402536", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:19.414837", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:19.414837", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:19.414837", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:19.414837", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:20.427339", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:20.427339", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:20.427339", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:20.427339", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:21.440184", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:21.440184", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:21.440184", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:21.440184", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:22.452824", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:22.452824", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:22.452824", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:22.452824", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:23.465786", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:23.465786", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:23.465786", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:23.465786", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:24.479171", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:24.479171", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:24.479171", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:24.479171", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:25.492207", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:25.492207", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:25.492207", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:25.492207", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:26.509613", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:26.509613", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:26.509613", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:26.509613", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:27.528640", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:27.528640", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:27.528640", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:27.528640", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:28.544264", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:28.544264", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:28.544264", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:28.544264", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:29.557775", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:29.557775", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:29.557775", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:29.557775", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:30.570483", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:30.570483", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:30.570483", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:30.570483", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:31.585874", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:31.585874", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:31.585874", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:31.585874", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:32.598341", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:32.598341", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:32.598341", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:32.598341", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:33.612930", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:33.612930", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:33.612930", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:33.612930", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:34.625639", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:34.625639", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:34.625639", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:34.625639", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:35.639874", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:35.639874", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:35.639874", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:35.639874", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:36.655711", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:36.655711", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:36.655711", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:36.655711", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:37.668461", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:37.668461", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:37.668461", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:37.668461", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:38.683822", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:38.683822", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:38.683822", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:38.683822", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:39.695962", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:39.695962", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:39.695962", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:39.695962", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:40.710796", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:40.710796", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:40.710796", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:40.710796", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:41.725653", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:41.725653", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:41.725653", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:41.725653", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:42.737799", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:42.737799", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:42.737799", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:42.737799", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:43.750247", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1052.268, "cpu_pct": 105.2268268, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:43.750247", "event_type": "cpu_alert", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 70% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:43.750247", "event_type": "cpu_critical", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": 105.2268268, "notes": "CPU média >= 100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:43.750247", "event_type": "request_wait", "replica_count": 1, "pod_name": "", "cpu_m": "", "cpu_pct": "", "notes": "Todas as réplicas ~100% (sem_hpa)"}
+{"timestamp": "2025-08-17T19:43:44.763042", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:45.777832", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:46.790729", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:47.806367", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:48.818933", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:49.832799", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:50.848211", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:51.862762", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:52.875757", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:53.889007", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:54.903693", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:55.916570", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:56.930938", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:57.943978", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:58.956803", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 228.785, "cpu_pct": 22.8784582, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:43:59.969108", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:00.983300", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:02.011091", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:03.026122", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:04.039812", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:05.054143", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:06.067142", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:07.081214", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:08.094253", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:09.107767", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:10.120678", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:11.135315", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:12.150032", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:13.162387", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.232, "cpu_pct": 0.12322999999999999, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:14.176024", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:15.188129", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:16.200358", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:17.213187", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:18.227367", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:19.240208", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:20.252371", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:21.265237", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:22.278655", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:23.291666", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:24.303650", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:25.317596", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:26.330230", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:27.345740", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:28.357640", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.411, "cpu_pct": 0.1411376, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:29.369664", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:30.381807", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:31.395087", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:32.409871", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:33.421981", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:34.435535", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:35.448943", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:36.461864", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:37.475732", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:38.488414", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:39.503676", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:40.518615", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}
+{"timestamp": "2025-08-17T19:44:41.531995", "event_type": "pod_usage", "replica_count": 1, "pod_name": "flask-api-f76d49f48-fw6f4", "cpu_m": 1.297, "cpu_pct": 0.12971410000000003, "notes": "sem_hpa"}

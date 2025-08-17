@@ -242,7 +242,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "pod_name": "",
                 "cpu_m": "",
                 "cpu_pct": cpu_pct_avg,  # <- usa campo compatível com o cabeçalho
-                "notes": "CPU média >=70%"
+                "notes": "CPU media >=70%"
             })
         if cpu_pct_avg >= 100:
             events.append({
@@ -252,7 +252,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "pod_name": "",
                 "cpu_m": "",
                 "cpu_pct": cpu_pct_avg,  # <- usa campo compatível com o cabeçalho
-                "notes": "CPU média >=100%"
+                "notes": "CPU media >=100%"
             })
 
     # Detecta fila de requests (sem HPA, todos pods saturados)

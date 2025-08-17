@@ -1,0 +1,9 @@
+{
+  "scenario": "sem_hpa",
+  "first_cpu_alert_ts": "2025-08-17T19:43:14.335831",
+  "first_cpu_critical_ts": "2025-08-17T19:43:14.335831",
+  "request_wait_count": 30,
+  "scale_events": 0,
+  "max_cpu_pct_seen": 105.2268268,
+  "samples": 178
+}
