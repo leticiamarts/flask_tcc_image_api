@@ -10,6 +10,7 @@ import logging
 # =========================
 # Constantes / Cabeçalho CSV
 # =========================
+
 CSV_FIELDS = [
     "timestamp",
     "event_type",
@@ -23,16 +24,33 @@ CSV_FIELDS = [
 # =========================
 # Funções utilitárias
 # =========================
+
 def get_timestamp():
     return datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
+def save_metrics_json(metrics, prefix="metrics"):
+    filename = f"{prefix}_{get_timestamp()}.json"
+    with open(filename, "w") as f:
+        json.dump(metrics, f, indent=4)
+    print(f"[INFO] Métricas salvas em {filename}")
+
 def _normalize_event_for_csv(event: dict) -> dict:
+    """
+    Garante que o evento tenha exatamente as colunas do CSV_FIELDS.
+    - Se vier avg_cpu_pct, mapeia para cpu_pct.
+    - Se vier replicas_before/replicas_after, anexa ao notes.
+    """
     row = {k: "" for k in CSV_FIELDS}
-    for k in CSV_FIELDS:
+    # Copia campos triviais
+    for k in ["timestamp", "event_type", "replica_count", "pod_name", "cpu_m", "cpu_pct", "notes"]:
         if k in event:
             row[k] = event[k]
 
-    # Scaling info nas notas
+    # Fallback: avg_cpu_pct -> cpu_pct
+    if not row["cpu_pct"] and "avg_cpu_pct" in event:
+        row["cpu_pct"] = event["avg_cpu_pct"]
+
+    # Preserva info de scaling se existir
     if "replicas_before" in event or "replicas_after" in event:
         before_ = event.get("replicas_before", "")
         after_ = event.get("replicas_after", "")
@@ -41,13 +59,8 @@ def _normalize_event_for_csv(event: dict) -> dict:
 
     return row
 
-def save_metrics_json(metrics, prefix="metrics"):
-    filename = f"{prefix}_{get_timestamp()}.json"
-    with open(filename, "w") as f:
-        json.dump(metrics, f, indent=4)
-    print(f"[INFO] Métricas salvas em {filename}")
-
 def save_metrics_csv(samples, filename):
+    # sempre cria com cabeçalho fixo
     with open(filename, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_FIELDS)
         writer.writeheader()
@@ -57,6 +70,7 @@ def save_metrics_csv(samples, filename):
             print(f"[INFO] CSV de eventos salvo em {filename}")
         else:
             print(f"[INFO] Nenhum evento coletado, CSV vazio criado: {filename}")
+
 # =========================
 # Métricas de aplicação
 # =========================
@@ -95,6 +109,8 @@ def get_k8s_metrics_top(namespace=None):
         pod_count = 0
 
         for line in lines:
+            if not line.strip():
+                continue
             parts = line.split()
             if len(parts) >= 3:
                 cpu = parts[1]
@@ -144,9 +160,14 @@ _last_replica_count = None  # estado global para detectar scaling
 # Coleta de métricas
 # =========================
 
+
+
 def collect_snapshot(namespace="default", deployment_name="flask-api"):
     """
-    Coleta métricas de CPU por pod, detecta scaling (HPA), alertas e request_wait.
+    Retorna eventos e métricas do cluster no instante atual.
+    - Uso de CPU por pod individual (event_type: pod_usage)
+    - Alertas agregados: cpu_alert (>=70%), cpu_critical (>=100%) usando média dos pods
+    - request_wait: quando todos os pods estão ~100%
     """
     global _last_replica_count
     config.load_kube_config()
@@ -177,7 +198,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
         return []
 
     cpu_totals = []
-    all_pods_100 = True
+    all_pods_100 = True  # flag para detectar fila sem recursos
 
     for pod in metrics.get("items", []):
         pod_name = pod["metadata"]["name"]
@@ -192,9 +213,11 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
 
             cpu_pct = (cpu_millicores / 1000) * 100
             cpu_totals.append(cpu_millicores)
+
             if cpu_pct < 100:
                 all_pods_100 = False
 
+            # evento por pod (para CSV detalhado)
             events.append({
                 "timestamp": datetime.datetime.utcnow().isoformat(),
                 "event_type": "pod_usage",
@@ -206,9 +229,10 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
             })
 
         except Exception as e:
-            logging.warning(f"Erro ao processar CPU do pod {pod_name}: {e}")
+            logging.warning(f"Erro ao processar CPU do pod {pod['metadata']['name']}: {e}")
 
-    # Detecta scaling (HPA)
+    
+        # Detecta scaling (HPA)
     if _last_replica_count is not None and replicas is not None and replicas != _last_replica_count:
         events.append({
             "timestamp": datetime.datetime.utcnow().isoformat(),
@@ -223,10 +247,11 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
         })
     _last_replica_count = replicas
 
-    # Alertas agregados
+    # --- ALERTAS AGREGADOS (média dos pods) ---
     if cpu_totals:
         avg_cpu_m = sum(cpu_totals) / len(cpu_totals)
         cpu_pct_avg = (avg_cpu_m / 1000) * 100
+
         if cpu_pct_avg >= 70:
             events.append({
                 "timestamp": datetime.datetime.utcnow().isoformat(),
@@ -235,7 +260,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "pod_name": "",
                 "cpu_m": "",
                 "cpu_pct": cpu_pct_avg,
-                "notes": "CPU média >=70%"
+                "notes": "CPU media >=70%"
             })
         if cpu_pct_avg >= 100:
             events.append({
@@ -245,7 +270,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "pod_name": "",
                 "cpu_m": "",
                 "cpu_pct": cpu_pct_avg,
-                "notes": "CPU média >=100%"
+                "notes": "CPU media >=100%"
             })
 
     # Detecta fila de requests
@@ -263,6 +288,10 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
     return events
 
 def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=5):
+    """
+    Monitora métricas de CPU e eventos durante o teste.
+    Usa collect_snapshot em loop para criar eventos contínuos.
+    """
     start_time = time.time()
     events = []
     logging.info("Iniciando coleta de métricas durante teste.")
@@ -271,6 +300,6 @@ def collect_during_test(namespace="default", deployment_name="flask-api", durati
         snapshot_events = collect_snapshot(namespace, deployment_name)
         events.extend(snapshot_events)
         time.sleep(interval_seconds)
-
+    
     print(f"[DEBUG] Total de eventos coletados: {len(events)}")
     return events
