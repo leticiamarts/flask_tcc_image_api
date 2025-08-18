@@ -1,9 +1,14 @@
+# selenium_load.py
 import argparse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import datetime
+import json
+from kubernetes import client, config
+import csv
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--url", required=True, help="URL pública da aplicação Streamlit")
@@ -12,6 +17,35 @@ parser.add_argument("--n", type=int, default=100, help="Número de envios")
 parser.add_argument("--sleep", type=float, default=0.1, help="Intervalo entre envios")
 args, _ = parser.parse_known_args()
 
+# =========================
+# Helpers Kubernetes / Logging
+# =========================
+def check_hpa_status(namespace="default", deployment_name="flask-api"):
+    config.load_kube_config()
+    apps_v1 = client.AppsV1Api()
+    deployment = apps_v1.read_namespaced_deployment(deployment_name, namespace)
+    replicas = deployment.status.replicas or 0
+    available = deployment.status.available_replicas or 0
+    return replicas, available
+
+def save_selenium_hpa_events(events, prefix="results/selenium_hpa_events"):
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    json_file = f"{prefix}_{timestamp}.json"
+    with open(json_file, "w") as f:
+        json.dump(events, f, indent=4)
+    print(f"[INFO] Selenium HPA events salvos em {json_file}")
+
+    csv_file = f"{prefix}_{timestamp}.csv"
+    if events:
+        with open(csv_file, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=list(events[0].keys()))
+            writer.writeheader()
+            writer.writerows(events)
+        print(f"[INFO] Selenium HPA events CSV salvo em {csv_file}")
+
+# =========================
+# Teste de carga Selenium
+# =========================
 def run_load_test(url, image_path, n=100, sleep=0.1):
     driver = webdriver.Chrome()
     driver.get(url)
@@ -20,6 +54,7 @@ def run_load_test(url, image_path, n=100, sleep=0.1):
     latencies = []
     success_count = 0
     total_count = n
+    hpa_events = []
 
     try:
         # Fecha popup inicial se existir
@@ -45,23 +80,36 @@ def run_load_test(url, image_path, n=100, sleep=0.1):
             start = time.time()
             try:
                 driver.execute_script("arguments[0].click();", send_btn)
+                replicas, available = check_hpa_status()
                 elapsed_ms = (time.time() - start) * 1000
                 latencies.append(elapsed_ms)
                 success_count += 1
             except:
-                latencies.append((time.time() - start) * 1000)
+                elapsed_ms = (time.time() - start) * 1000
+                latencies.append(elapsed_ms)
+
+            # --- CHECK HPA STATUS ---
+            replicas, available = check_hpa_status()
+            hpa_events.append({
+                "timestamp": datetime.datetime.utcnow().isoformat(),
+                "click_index": i+1,
+                "latency_ms": elapsed_ms,
+                "replicas": replicas,
+                "available_replicas": available,
+                "status": "ok" if replicas == available else "waiting",
+                "notes": "HPA disparado, pods não prontos" if replicas > available else ""
+            })
+
             time.sleep(sleep)
 
     finally:
         driver.quit()
+        save_selenium_hpa_events(hpa_events)
 
     return latencies, success_count, total_count
 
 
 if __name__ == "__main__":
-    latencies, success, total = run_load_test()
+    latencies, success, total = run_load_test(args.url, args.image, args.n, args.sleep)
     print(f"Total Requests: {total}, Success: {success}")
     print(f"Average Latency: {sum(latencies)/len(latencies):.2f} ms")
-
-
-
