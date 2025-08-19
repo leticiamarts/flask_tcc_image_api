@@ -54,7 +54,6 @@ echo "[INFO] Aplicando seus arquivos do Kubernetes..."
 kubectl apply -f k8s/flask-deployment.yaml
 kubectl apply -f k8s/flask-hpa.yaml
 kubectl apply -f k8s/flask-service.yaml
-kubectl apply -f k8s/ingress.yaml
 kubectl apply -f k8s/streamlit-deployment.yaml
 kubectl apply -f k8s/streamlit-service.yaml
 kubectl apply -f k8s/ingress.yaml
