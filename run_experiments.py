@@ -24,7 +24,7 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
         events_samples = mr.collect_during_test(
             namespace=namespace,
             deployment_name="flask-api",
-            duration_seconds=max(duration, 20),  # Garante pelo menos 20s de coleta
+            duration_seconds=max(duration, 20),
             interval_seconds=1
         )
 
@@ -39,20 +39,39 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
     start_time = time.time()
     all_latencies, total_success, total_count = [], 0, 0
 
-    # Executa fases de carga
-    if phases:
-        for i, phase in enumerate(phases, 1):
-            print(f"[INFO] Executando fase {i}: {phase}")
-            phase_latencies, phase_success, phase_total = load_module.run_load_test(**{**load_args, **phase})
-            all_latencies.extend(phase_latencies)
-            total_success += phase_success
-            total_count += phase_total
-            print(f"[INFO] Fase {i} concluída. Sucesso={phase_success}/{phase_total}")
-            time.sleep(2)  # pequena pausa entre fases
-    else:
-        latencies, success_count, count = load_module.run_load_test(**load_args)
-        all_latencies.extend(latencies)
-        total_success, total_count = success_count, count
+    driver = None
+    if load_type == "selenium":
+        driver = load_module.create_driver(load_args["url"])  # cria driver 1 vez
+
+    try:
+        # Executa fases de carga
+        if phases:
+            for i, phase in enumerate(phases, 1):
+                print(f"[INFO] Executando fase {i}: {phase}")
+                if load_type == "selenium":
+                    phase_latencies, phase_success, phase_total = load_module.run_load_test(
+                        driver=driver, **{**load_args, **phase}
+                    )
+                else:
+                    phase_latencies, phase_success, phase_total = load_module.run_load_test(**{**load_args, **phase})
+
+                all_latencies.extend(phase_latencies)
+                total_success += phase_success
+                total_count += phase_total
+                print(f"[INFO] Fase {i} concluída. Sucesso={phase_success}/{phase_total}")
+                time.sleep(20)  # pequena pausa entre fases
+        else:
+            if load_type == "selenium":
+                latencies, success_count, count = load_module.run_load_test(driver=driver, **load_args)
+            else:
+                latencies, success_count, count = load_module.run_load_test(**load_args)
+
+            all_latencies.extend(latencies)
+            total_success, total_count = success_count, count
+
+    finally:
+        if driver:
+            driver.quit()  # fecha driver só no final
 
     end_time = time.time()
 
@@ -89,7 +108,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_type", choices=["requests", "selenium"], required=True, help="Tipo de teste de carga")
     parser.add_argument("--namespace", default="default", help="Namespace do Kubernetes")
     parser.add_argument("--label_selector", default="app=flask-api", help="Label selector dos pods")
-    parser.add_argument("--duration", type=int, default=60, help="Duração do teste em segundos")
+    parser.add_argument("--duration", type=int, default=240, help="Duração do teste em segundos")
 
     parser.add_argument("--url", required=True, help="URL alvo da API ou aplicação")
     parser.add_argument("--total", type=int, default=500, help="[requests] Total de requisições")
