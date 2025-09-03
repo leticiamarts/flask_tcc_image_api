@@ -6,7 +6,7 @@ from datetime import datetime
 from experiments import metrics_reporter as mr
 import threading
 
-def run_experiment(load_type, namespace, label_selector, duration, load_args):
+def run_experiment(load_type, namespace, label_selector, duration, load_args, phases=None):
     print(f"[INFO] Iniciando experimento com carga: {load_type}")
 
     if load_type == "requests":
@@ -37,7 +37,23 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args):
 
     # Executa teste de carga na thread principal
     start_time = time.time()
-    latencies, success_count, total_count = load_module.run_load_test(**load_args)
+    all_latencies, total_success, total_count = [], 0, 0
+
+    # Executa fases de carga
+    if phases:
+        for i, phase in enumerate(phases, 1):
+            print(f"[INFO] Executando fase {i}: {phase}")
+            phase_latencies, phase_success, phase_total = load_module.run_load_test(**{**load_args, **phase})
+            all_latencies.extend(phase_latencies)
+            total_success += phase_success
+            total_count += phase_total
+            print(f"[INFO] Fase {i} concluída. Sucesso={phase_success}/{phase_total}")
+            time.sleep(2)  # pequena pausa entre fases
+    else:
+        latencies, success_count, count = load_module.run_load_test(**load_args)
+        all_latencies.extend(latencies)
+        total_success, total_count = success_count, count
+
     end_time = time.time()
 
     monitor_thread.join()
@@ -49,12 +65,12 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args):
         "start_time": start_time,
         "end_time": end_time,
         "duration_sec": end_time - start_time,
-        "latency_stats": mr.calculate_latency_stats(latencies),
-        "success_error_rate": mr.calculate_success_rate(success_count, total_count),
+        "latency_stats": mr.calculate_latency_stats(all_latencies),
+        "success_error_rate": mr.calculate_success_rate(total_success, total_count),
         "k8s_usage": mr.get_k8s_resource_usage(namespace, label_selector),
         "total_requests": total_count,
-        "total_success": success_count,
-        "total_errors": total_count - success_count
+        "total_success": total_success,
+        "total_errors": total_count - total_success
     }
 
     # Salva resultados
@@ -75,7 +91,6 @@ if __name__ == "__main__":
     parser.add_argument("--label_selector", default="app=flask-api", help="Label selector dos pods")
     parser.add_argument("--duration", type=int, default=60, help="Duração do teste em segundos")
 
-    # Parâmetros específicos para cada tipo de carga
     parser.add_argument("--url", required=True, help="URL alvo da API ou aplicação")
     parser.add_argument("--total", type=int, default=500, help="[requests] Total de requisições")
     parser.add_argument("--concurrency", type=int, default=20, help="[requests] Número de threads")
@@ -86,25 +101,25 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.load_type == "requests":
-        load_args = {
-            "url": args.url,
-            "total": args.total,
-            "concurrency": args.concurrency
-        }
+        base_args = {"url": args.url, "total": args.total, "concurrency": args.concurrency}
     else:  # selenium
         if not args.image:
             parser.error("--image é obrigatório para load_type=selenium")
-        load_args = {
-            "url": args.url,
-            "image_path": args.image,
-            "n": args.n,
-            "sleep": args.sleep
-        }
+        base_args = {"url": args.url, "image_path": args.image, "n": args.n, "sleep": args.sleep}
+
+    phases = [
+        {"n": 2000, "sleep": 0.01},  # pico
+        {"n": 400, "sleep": 0.04},   # carga média alta
+        {"n": 200, "sleep": 0.05},   # carga média
+        {"n": 400, "sleep": 0.04},   # carga média alta
+        {"n": 50, "sleep": 0.2}     # sustentada baixa
+    ] if args.load_type == "selenium" else None
 
     run_experiment(
         load_type=args.load_type,
         namespace=args.namespace,
         label_selector=args.label_selector,
         duration=args.duration,
-        load_args=load_args
+        load_args=base_args,
+        phases=phases
     )
