@@ -9,12 +9,13 @@ import threading
 def run_experiment(load_type, namespace, label_selector, duration, load_args, phases=None):
     print(f"[INFO] Iniciando experimento com carga: {load_type}")
 
-    if load_type == "requests":
-        load_module = importlib.import_module("experiments.requests_load")
-    elif load_type == "selenium":
+    if load_type == "selenium":
         load_module = importlib.import_module("experiments.selenium_load")
+    elif load_type == "requests":
+        # Feature deprecada: requests_load removido
+        raise NotImplementedError("O tipo de carga 'requests' foi removido. Use 'selenium'.")
     else:
-        raise ValueError("Tipo de carga inválido. Use 'requests' ou 'selenium'.")
+        raise ValueError("Tipo de carga inválido. Use 'selenium'.")
 
     events_samples = []
 
