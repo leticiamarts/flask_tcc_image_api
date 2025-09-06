@@ -46,6 +46,7 @@ jobs:
       - name: Build and push Docker images
         shell: bash
         run: |
+          chmod +x ./push_images.sh
           ./push_images.sh
 
 
