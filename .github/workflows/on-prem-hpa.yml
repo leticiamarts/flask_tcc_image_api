@@ -58,10 +58,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build e Push das imagens
-        shell: bash
+        shell: powershell
         run: |
-          chmod +x ./push_images.sh
-          ./push_images.sh
+          & "C:\Program Files\Git\bin\bash.exe" "${{ github.workspace }}\push_images.sh"
+
 
       - name: Subir cluster on-prem
         shell: powershell
