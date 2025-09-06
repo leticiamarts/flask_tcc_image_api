@@ -48,6 +48,7 @@ jobs:
         run: |
           chmod +x ./push_images.sh
           ./push_images.sh
+        working-directory: ${{ github.workspace }}
 
 
       - name: Authenticate to Google Cloud
