@@ -34,6 +34,7 @@ jobs:
         shell: bash
         run: |
           source .venv/bin/activate
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest -v ../tests/
 
       - name: Login to Docker Hub
