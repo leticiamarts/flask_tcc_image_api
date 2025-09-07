@@ -7,10 +7,6 @@ import time
 from kubernetes import client, config
 import logging
 
-# =========================
-# Constantes / Cabeçalho CSV
-# =========================
-
 CSV_FIELDS = [
     "timestamp",
     "event_type",
