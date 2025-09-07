@@ -87,12 +87,19 @@ def run_load_test(url, image_path, n=100, sleep=0.1, driver=None):
             start = time.time()
             try:
                 driver.execute_script("arguments[0].click();", send_btn)
+
+                processed_img = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "img"))
+                )
+
                 elapsed_ms = (time.time() - start) * 1000
                 latencies.append(elapsed_ms)
                 success_count += 1
             except:
                 elapsed_ms = (time.time() - start) * 1000
                 latencies.append(elapsed_ms)
+                print(f"[WARN] Request {i+1} falhou: {e}")
+                
 
             replicas, available = check_hpa_status()
             hpa_events.append({
