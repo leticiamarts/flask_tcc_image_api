@@ -1,6 +1,5 @@
 import pytest
 import numpy as np
-import cv2
 from unittest.mock import patch, MagicMock
 from api.services import image_service
 
