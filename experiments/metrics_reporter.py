@@ -284,6 +284,21 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
 
     return events
 
+def create_phase_event(phase_name):
+    """
+    Retorna um evento indicando mudança de fase.
+    """
+    import datetime
+    return {
+        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "event_type": "phase_change",
+        "replica_count": "",
+        "pod_name": "",
+        "cpu_m": "",
+        "cpu_pct": "",
+        "notes": f"Fase do teste alterada para {phase_name}"
+    }
+
 def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=5):
     """
     Monitora métricas de CPU e eventos durante o teste.

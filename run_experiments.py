@@ -48,7 +48,12 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
         # Executa fases de carga
         if phases:
             for i, phase in enumerate(phases, 1):
+                phase_name = f"Fase {i}"
                 print(f"[INFO] Executando fase {i}: {phase}")
+                
+                events_samples.append(
+                    mr.create_phase_event(phase_name)  # 0 ou coleta do deployment atual
+                )
                 if load_type == "selenium":
                     phase_latencies, phase_success, phase_total = load_module.run_load_test(
                         driver=driver, **{**load_args, **phase}
@@ -109,7 +114,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_type", choices=["requests", "selenium"], required=True, help="Tipo de teste de carga")
     parser.add_argument("--namespace", default="default", help="Namespace do Kubernetes")
     parser.add_argument("--label_selector", default="app=flask-api", help="Label selector dos pods")
-    parser.add_argument("--duration", type=int, default=240, help="Duração do teste em segundos")
+    parser.add_argument("--duration", type=int, default=600, help="Duração do teste em segundos")
 
     parser.add_argument("--url", required=True, help="URL alvo da API ou aplicação")
     parser.add_argument("--total", type=int, default=500, help="[requests] Total de requisições")
@@ -128,11 +133,16 @@ if __name__ == "__main__":
         base_args = {"url": args.url, "image_path": args.image, "n": args.n, "sleep": args.sleep}
 
     phases = [
+        {"n": 600, "sleep": 0.03},  # carga alta
         {"n": 2000, "sleep": 0.01},  # pico
         {"n": 400, "sleep": 0.04},   # carga média alta
         {"n": 200, "sleep": 0.05},   # carga média
+        {"n": 600, "sleep": 0.03},  # carga alta
         {"n": 400, "sleep": 0.04},   # carga média alta
-        {"n": 50, "sleep": 0.2}     # sustentada baixa
+        {"n": 100, "sleep": 1.0},     # muito baixo
+        {"n": 2000, "sleep": 0.01},  # pico
+        {"n": 600, "sleep": 0.03},  # carga alta
+        {"n": 50, "sleep": 0.2},     # sustentada baixa
     ] if args.load_type == "selenium" else None
 
     run_experiment(
