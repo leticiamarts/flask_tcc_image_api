@@ -275,20 +275,6 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
     return events
 
 # =========================
-# Auxiliar: obter nodeName
-# =========================
-
-def get_node_name_for_pod(namespace="default", label_selector="app=flask-api"):
-    config.load_kube_config()
-    v1 = client.CoreV1Api()
-    pods = v1.list_namespaced_pod(namespace, label_selector=label_selector)
-    if not pods.items:
-        logging.error(f"Nenhum pod encontrado em {namespace} com selector={label_selector}")
-        return None
-    return pods.items[0].spec.node_name
-
-
-# =========================
 # Coleta via Kubelet (via proxy)
 # =========================
 
@@ -370,7 +356,7 @@ def collect_during_test(namespace="default", deployment_name="flask-api", durati
 
             if snapshot_events:
                 events.extend(snapshot_events)
-                print(f"[DEBUG] Snapshot coletado com {len(snapshot_events)} eventos")
+                #print(f"[DEBUG] Snapshot coletado com {len(snapshot_events)} eventos")
             else:
                 logging.warning("[WARN] Nenhum evento coletado neste ciclo")
 
