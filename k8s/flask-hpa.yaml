@@ -16,13 +16,13 @@ spec:
         target:
           type: Utilization
           averageUtilization: 70
-  behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 20   # tempo de espera (em segundos) antes de reduzir pods
-      policies:
-        - type: Percent
-          value: 50
-          periodSeconds: 20
+  #behavior:
+  #  scaleDown:
+  #    stabilizationWindowSeconds: 20   # tempo de espera (em segundos) antes de reduzir pods
+  #    policies:
+  #      - type: Percent
+  #        value: 50
+  #        periodSeconds: 20
     #scaleUp:
     #  stabilizationWindowSeconds: 0
     #  policies:
