@@ -21,14 +21,14 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
 
     # Função de monitoramento
     def monitor_metrics():
-        mr.collect_during_test(
+        nonlocal events_samples
+        events_samples = mr.collect_during_test(
             namespace=namespace,
             deployment_name="flask-api",
             duration_seconds=max(duration, 20),
-            interval_seconds=1,
-            shared_events=events_samples  # 👈 passa a lista já existente
+            interval_seconds=1, 
+            use_kubelet=True
         )
-
 
     # Inicia thread de monitoramento **antes** do load test
     monitor_thread = threading.Thread(target=monitor_metrics)
@@ -49,17 +49,6 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
         # Executa fases de carga
         if phases:
             for i, phase in enumerate(phases, 1):
-                
-                events_samples.append({
-                    "timestamp": datetime.utcnow().isoformat(),
-                    "event_type": "phase_change",
-                    "replica_count": "",
-                    "pod_name": "",
-                    "cpu_m": "",
-                    "cpu_pct": "",
-                    "notes": f"Início da Fase {i}"
-                })
-
                 print(f"[INFO] Executando fase {i}: {phase}")
                 if load_type == "selenium":
                     phase_latencies, phase_success, phase_total = load_module.run_load_test(
@@ -89,6 +78,9 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
     end_time = time.time()
 
     monitor_thread.join()
+
+    timestamp_str = mr.get_timestamp()
+    mr.save_raw_json(events_samples, f"results/k8s_raw_{load_type}_{timestamp_str}.json")
 
     print(f"[DEBUG] Total de eventos coletados: {len(events_samples)}")
 
@@ -121,7 +113,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_type", choices=["requests", "selenium"], required=True, help="Tipo de teste de carga")
     parser.add_argument("--namespace", default="default", help="Namespace do Kubernetes")
     parser.add_argument("--label_selector", default="app=flask-api", help="Label selector dos pods")
-    parser.add_argument("--duration", type=int, default=600, help="Duração do teste em segundos")
+    parser.add_argument("--duration", type=int, default=240, help="Duração do teste em segundos")
 
     parser.add_argument("--url", required=True, help="URL alvo da API ou aplicação")
     parser.add_argument("--total", type=int, default=500, help="[requests] Total de requisições")
@@ -140,27 +132,12 @@ if __name__ == "__main__":
         base_args = {"url": args.url, "image_path": args.image, "n": args.n, "sleep": args.sleep}
 
     phases = [
-        #{"n": 200, "sleep": 0.05},   # carga média
-        #{"n": 400, "sleep": 0.04},   # carga média alta
-        #{"n": 600, "sleep": 0.03},  # carga alta
-        {"n": 2000, "sleep": 0.01},  # pico
-        {"n": 600, "sleep": 0.03},  # carga alta
-        {"n": 50, "sleep": 0.5},     # muito baixo
-        {"n": 2000, "sleep": 0.01},  # pico
-        {"n": 400, "sleep": 0.04},   # carga média alta
-        #{"n": 50, "sleep": 0.2},     # sustentada baixa
-    ] if args.load_type == "selenium" else None
-
-    
-    '''
-    phases = [
         {"n": 2000, "sleep": 0.01},  # pico
         {"n": 400, "sleep": 0.04},   # carga média alta
         {"n": 200, "sleep": 0.05},   # carga média
         {"n": 400, "sleep": 0.04},   # carga média alta
         {"n": 50, "sleep": 0.2}     # sustentada baixa
-    ]   # em 300s
-    '''
+    ] if args.load_type == "selenium" else None
 
     run_experiment(
         load_type=args.load_type,

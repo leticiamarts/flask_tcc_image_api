@@ -27,12 +27,16 @@ if ! command -v ngrok &> /dev/null; then
     exit 1
 fi
 
-echo "[INFO] Criando cluster local com k3d..."
+
+echo "[INFO] Criando cluster local com k3d... (interval 1s)"
 k3d cluster create $CLUSTER_NAME --servers 1 --agents 1 \
     -p "8000:80@loadbalancer" -p "8501:8501@loadbalancer" \
-    --k3s-arg "--disable=traefik@server:*" || {
+    --k3s-arg "--disable=traefik@server:*" \
+    --k3s-arg "--kubelet-arg=housekeeping-interval=1s@server:*" \
+    --k3s-arg "--kubelet-arg=housekeeping-interval=1s@agent:*" || {
     echo "[INFO] Cluster já existe ou erro ao criar. Tentando reutilizar cluster existente..."
 }
+
 
 echo "[INFO] Aguardando o cluster iniciar..."
 sleep 10

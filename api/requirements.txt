@@ -5,3 +5,4 @@ pytest-mock
 pytest
 pillow
 requests
+python-dotenv
