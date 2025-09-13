@@ -7,6 +7,7 @@ import time
 from kubernetes import client, config
 import logging
 
+
 CSV_FIELDS = [
     "timestamp",
     "event_type",
@@ -250,23 +251,15 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
 
     return events
 
-def create_phase_event(phase_name):
-    return {
-        "timestamp": datetime.datetime.utcnow().isoformat(),
-        "event_type": "phase_change",
-        "replica_count": "",
-        "pod_name": "",
-        "cpu_m": "",
-        "cpu_pct": "",
-        "notes": f"Fase do teste alterada para {phase_name}"
-    }
 
-def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=1):
+def collect_during_test(namespace="default", deployment_name="flask-api",
+                        duration_seconds=60, interval_seconds=5,
+                        shared_events=None):
     """
     Monitora métricas de CPU e eventos durante o teste.
     """
     start_time = time.time()
-    events = []
+    events = shared_events if shared_events is not None else []
     logging.info("Iniciando coleta de métricas durante teste.")
 
     while time.time() - start_time < duration_seconds:
@@ -276,3 +269,4 @@ def collect_during_test(namespace="default", deployment_name="flask-api", durati
     
     print(f"[DEBUG] Total de eventos coletados: {len(events)}")
     return events
+

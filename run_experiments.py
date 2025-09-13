@@ -21,13 +21,14 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
 
     # Função de monitoramento
     def monitor_metrics():
-        snapshots = mr.collect_during_test(
+        mr.collect_during_test(
             namespace=namespace,
             deployment_name="flask-api",
             duration_seconds=max(duration, 20),
-            interval_seconds=1
+            interval_seconds=1,
+            shared_events=events_samples  # 👈 passa a lista já existente
         )
-        events_samples.extend(snapshots)
+
 
     # Inicia thread de monitoramento **antes** do load test
     monitor_thread = threading.Thread(target=monitor_metrics)
@@ -48,12 +49,18 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
         # Executa fases de carga
         if phases:
             for i, phase in enumerate(phases, 1):
-                phase_name = f"Fase {i}"
+                
+                events_samples.append({
+                    "timestamp": datetime.utcnow().isoformat(),
+                    "event_type": "phase_change",
+                    "replica_count": "",
+                    "pod_name": "",
+                    "cpu_m": "",
+                    "cpu_pct": "",
+                    "notes": f"Início da Fase {i}"
+                })
+
                 print(f"[INFO] Executando fase {i}: {phase}")
-
-                # Adiciona evento de mudança de fase
-                events_samples.append(mr.create_phase_event(phase_name))
-
                 if load_type == "selenium":
                     phase_latencies, phase_success, phase_total = load_module.run_load_test(
                         driver=driver, **{**load_args, **phase}
@@ -65,7 +72,6 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
                 total_success += phase_success
                 total_count += phase_total
                 print(f"[INFO] Fase {i} concluída. Sucesso={phase_success}/{phase_total}")
-
                 time.sleep(20)  # pequena pausa entre fases
         else:
             if load_type == "selenium":
@@ -128,23 +134,33 @@ if __name__ == "__main__":
 
     if args.load_type == "requests":
         base_args = {"url": args.url, "total": args.total, "concurrency": args.concurrency}
-    else:
+    else:  # selenium
         if not args.image:
             parser.error("--image é obrigatório para load_type=selenium")
         base_args = {"url": args.url, "image_path": args.image, "n": args.n, "sleep": args.sleep}
 
     phases = [
+        #{"n": 200, "sleep": 0.05},   # carga média
+        #{"n": 400, "sleep": 0.04},   # carga média alta
+        #{"n": 600, "sleep": 0.03},  # carga alta
+        {"n": 2000, "sleep": 0.01},  # pico
         {"n": 600, "sleep": 0.03},  # carga alta
+        {"n": 50, "sleep": 0.5},     # muito baixo
+        {"n": 2000, "sleep": 0.01},  # pico
+        {"n": 400, "sleep": 0.04},   # carga média alta
+        #{"n": 50, "sleep": 0.2},     # sustentada baixa
+    ] if args.load_type == "selenium" else None
+
+    
+    '''
+    phases = [
         {"n": 2000, "sleep": 0.01},  # pico
         {"n": 400, "sleep": 0.04},   # carga média alta
         {"n": 200, "sleep": 0.05},   # carga média
-        {"n": 600, "sleep": 0.03},  # carga alta
         {"n": 400, "sleep": 0.04},   # carga média alta
-        {"n": 100, "sleep": 1.0},     # muito baixo
-        {"n": 2000, "sleep": 0.01},  # pico
-        {"n": 600, "sleep": 0.03},  # carga alta
-        {"n": 50, "sleep": 0.2},     # sustentada baixa
-    ] if args.load_type == "selenium" else None
+        {"n": 50, "sleep": 0.2}     # sustentada baixa
+    ]   # em 300s
+    '''
 
     run_experiment(
         load_type=args.load_type,
