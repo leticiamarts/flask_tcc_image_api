@@ -5,15 +5,44 @@ import argparse
 from datetime import datetime
 from experiments import metrics_reporter as mr
 import threading
+from concurrent.futures import ThreadPoolExecutor
 
-def run_experiment(load_type, namespace, label_selector, duration, load_args, phases=None):
+
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import importlib
+
+def run_phase_in_parallel(load_module, phase, load_args, threads=4):
+    all_latencies, total_success, total_count = [], 0, 0
+    drivers = []
+
+    def run_thread_load():
+        driver = load_module.create_driver(load_args["url"])
+        drivers.append(driver)
+        try:
+            latencies, success, count = load_module.run_load_test(driver=driver, **{**load_args, **phase})
+            return latencies, success, count, driver
+        except Exception as e:
+            print(f"[ERROR] Thread load falhou: {e}")
+            return [], 0, 0, driver
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+        futures = [executor.submit(run_thread_load) for _ in range(threads)]
+        for f in as_completed(futures):
+            lat, success, count, driver = f.result()
+            all_latencies.extend(lat)
+            total_success += success
+            total_count += count
+            # Fechando o driver ao final de cada thread
+            driver.quit()
+
+    return all_latencies, total_success, total_count
+
+
+def run_experiment(load_type, namespace, label_selector, duration, load_args, phases=None, threads=3):
     print(f"[INFO] Iniciando experimento com carga: {load_type}")
 
     if load_type == "selenium":
         load_module = importlib.import_module("experiments.selenium_load")
-    elif load_type == "requests":
-        # Feature deprecada: requests_load removido
-        raise NotImplementedError("O tipo de carga 'requests' foi removido. Use 'selenium'.")
     else:
         raise ValueError("Tipo de carga inválido. Use 'selenium'.")
 
@@ -26,62 +55,37 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
             namespace=namespace,
             deployment_name="flask-api",
             duration_seconds=max(duration, 20),
-            interval_seconds=1, 
+            interval_seconds=1,
             use_kubelet=True
         )
 
     # Inicia thread de monitoramento **antes** do load test
     monitor_thread = threading.Thread(target=monitor_metrics)
     monitor_thread.start()
-
-    # Pequena espera para garantir que coleta começou
     time.sleep(1)
 
-    # Executa teste de carga na thread principal
     start_time = time.time()
     all_latencies, total_success, total_count = [], 0, 0
 
-    driver = None
-    if load_type == "selenium":
-        driver = load_module.create_driver(load_args["url"])  # cria driver 1 vez
-
     try:
-        # Executa fases de carga
         if phases:
             for i, phase in enumerate(phases, 1):
                 print(f"[INFO] Executando fase {i}: {phase}")
-                if load_type == "selenium":
-                    phase_latencies, phase_success, phase_total = load_module.run_load_test(
-                        driver=driver, **{**load_args, **phase}
-                    )
-                else:
-                    phase_latencies, phase_success, phase_total = load_module.run_load_test(**{**load_args, **phase})
-
+                phase_latencies, phase_success, phase_total = run_phase_in_parallel(load_module, phase, load_args, threads=threads)
                 all_latencies.extend(phase_latencies)
                 total_success += phase_success
                 total_count += phase_total
                 print(f"[INFO] Fase {i} concluída. Sucesso={phase_success}/{phase_total}")
-                time.sleep(20)  # pequena pausa entre fases
         else:
-            if load_type == "selenium":
-                latencies, success_count, count = load_module.run_load_test(driver=driver, **load_args)
-            else:
-                latencies, success_count, count = load_module.run_load_test(**load_args)
-
-            all_latencies.extend(latencies)
-            total_success, total_count = success_count, count
+            all_latencies, total_success, total_count = load_module.run_load_test(**load_args)
 
     finally:
-        if driver:
-            driver.quit()  # fecha driver só no final
+        monitor_thread.join()
 
     end_time = time.time()
 
-    monitor_thread.join()
-
     timestamp_str = mr.get_timestamp()
     mr.save_raw_json(events_samples, f"results/k8s_raw_{load_type}_{timestamp_str}.json")
-
     print(f"[DEBUG] Total de eventos coletados: {len(events_samples)}")
 
     # Monta métricas finais
@@ -102,7 +106,6 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     mr.save_metrics_json(metrics, prefix=f"results/metrics_{load_type}")
     mr.save_metrics_csv(events_samples, f"results/k8s_samples_{load_type}_{timestamp}.csv")
-
     print(f"[INFO] Experimento concluído.")
 
 
@@ -132,7 +135,7 @@ if __name__ == "__main__":
         base_args = {"url": args.url, "image_path": args.image, "n": args.n, "sleep": args.sleep}
 
     phases = [
-        {"n": 2000, "sleep": 0.01},  # pico
+        {"n": 1000, "sleep": 0.1},  # pico
         {"n": 400, "sleep": 0.04},   # carga média alta
         {"n": 200, "sleep": 0.05},   # carga média
         {"n": 400, "sleep": 0.04},   # carga média alta
