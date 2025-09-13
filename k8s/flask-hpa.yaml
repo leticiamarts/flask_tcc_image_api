@@ -23,12 +23,12 @@ spec:
         - type: Percent
           value: 50
           periodSeconds: 20
-    scaleUp:
-      stabilizationWindowSeconds: 0
-      policies:
-        - type: Pods
-          value: 1
-          periodSeconds: 20
+    #scaleUp:
+    #  stabilizationWindowSeconds: 0
+    #  policies:
+    #    - type: Pods
+    #      value: 1
+    #      periodSeconds: 20
 
-# deixei scaleup definido abaixo para testar - ele está restringindo quantos pods (11) podem escalar em um determinado tempo (20s). verificar se assim é ok, ou se volto para a medida anterior que nao tem restrição
+# tirei o scaleup. posso testar com dps. - ele estva restringindo quantos pods (1) podem escalar em um determinado tempo (20s).
 # de repente manter só a definicao de scaleDown em behavior
