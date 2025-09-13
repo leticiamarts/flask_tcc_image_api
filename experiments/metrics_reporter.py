@@ -305,54 +305,50 @@ def get_kubelet_stats_proxy(node_name):
 
 def collect_snapshot_kubelet(namespace="default", deployment_name="flask-api", label_selector="app=flask-api"):
     config.load_kube_config()
+    v1 = client.CoreV1Api()
     apps_v1 = client.AppsV1Api()
-    
-    # tentar obter replicas
     try:
         deployment = apps_v1.read_namespaced_deployment(deployment_name, namespace)
         replicas = deployment.status.replicas or 0
     except Exception:
         replicas = None
 
-    node_name = get_node_name_for_pod(namespace, label_selector)
-    if not node_name:
-        logging.error("NodeName não encontrado, abortando coleta via Kubelet")
-        return []
-
-    stats = get_kubelet_stats_proxy(node_name)
-    if not stats or "pods" not in stats:
-        logging.warning(f"Snapshot vazio do kubelet para {node_name}")
-        return []
-
-    # salvar snapshot cru
-    save_raw_json(stats, "results/kubelet_snapshots.json")
-
+    # listar todos os pods do deployment
+    pods = v1.list_namespaced_pod(namespace, label_selector=label_selector)
     events = []
 
-    for pod in stats["pods"]:
-        if pod.get("podRef", {}).get("namespace") != namespace:
+    for pod in pods.items:
+        node_name = pod.spec.node_name
+        stats = get_kubelet_stats_proxy(node_name)
+        if not stats or "pods" not in stats:
+            logging.warning(f"Snapshot vazio do kubelet para {node_name}")
             continue
 
-        pod_name = pod["podRef"].get("name", "")
-        containers = pod.get("containers", [])
-        for container in containers:
-            try:
-                cpu_usage_nano = container["cpu"]["usageNanoCores"]
-                cpu_m = cpu_usage_nano / 1_000_000
-                cpu_pct = (cpu_m / 1000) * 100
+        # procurar pod exato no stats do node
+        for stat_pod in stats["pods"]:
+            if stat_pod.get("podRef", {}).get("name") != pod.metadata.name:
+                continue
 
-                events.append({
-                    "timestamp": datetime.datetime.utcnow().isoformat(),
-                    "event_type": "pod_usage_kubelet",
-                    "replica_count": replicas,
-                    "pod_name": f"{pod_name}/{container['name']}",
-                    "cpu_m": cpu_m,
-                    "cpu_pct": cpu_pct,
-                    "notes": f"via kubelet {node_name}"
-                })
-            except Exception as e:
-                logging.warning(f"Erro ao processar contêiner {container.get('name')} do pod {pod_name}: {e}")
+            containers = stat_pod.get("containers", [])
+            for container in containers:
+                try:
+                    cpu_usage_nano = container["cpu"]["usageNanoCores"]
+                    cpu_m = cpu_usage_nano / 1_000_000
+                    cpu_pct = (cpu_m / 1000) * 100
 
+                    events.append({
+                        "timestamp": datetime.datetime.utcnow().isoformat(),
+                        "event_type": "pod_usage_kubelet",
+                        "replica_count": replicas,  # replica_count do deployment
+                        "pod_name": f"{pod.metadata.name}/{container['name']}",
+                        "cpu_m": cpu_m,
+                        "cpu_pct": cpu_pct,
+                        "notes": f"via kubelet {node_name}"
+                    })
+                except Exception as e:
+                    logging.warning(f"Erro ao processar contêiner {container.get('name')} do pod {pod.metadata.name}: {e}")
+
+    logging.info(f"Total de pods Flask coletados: {len(events)}")
     return events
 
 
