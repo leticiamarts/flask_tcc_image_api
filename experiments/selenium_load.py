@@ -17,9 +17,6 @@ parser.add_argument("--sleep", type=float, default=0.1, help="Intervalo entre en
 args, _ = parser.parse_known_args()
 
 
-# =========================
-# Driver Management
-# =========================
 def create_driver(url):
     driver = webdriver.Chrome()
     driver.get(url)
@@ -34,9 +31,6 @@ def create_driver(url):
         pass
     return driver
 
-# =========================
-# Teste de carga Selenium
-# =========================
 def run_load_test(url, image_path, n=100, sleep=0.1, driver=None):
     created_here = False
     if driver is None:

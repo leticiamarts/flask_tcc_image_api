@@ -26,7 +26,8 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
             namespace=namespace,
             deployment_name="flask-api",
             duration_seconds=max(duration, 20),
-            interval_seconds=1
+            interval_seconds=1, 
+            use_kubelet=True
         )
 
     # Inicia thread de monitoramento **antes** do load test
@@ -77,6 +78,9 @@ def run_experiment(load_type, namespace, label_selector, duration, load_args, ph
     end_time = time.time()
 
     monitor_thread.join()
+
+    timestamp_str = mr.get_timestamp()
+    mr.save_raw_json(events_samples, f"results/k8s_raw_{load_type}_{timestamp_str}.json")
 
     print(f"[DEBUG] Total de eventos coletados: {len(events_samples)}")
 

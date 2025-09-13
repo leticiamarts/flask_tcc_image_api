@@ -4,8 +4,15 @@ import statistics
 import subprocess
 import csv
 import time
-from kubernetes import client, config
+import requests
 import logging
+import urllib3
+import os
+from kubernetes import client, config
+from config import APP_HOST, APP_PORT
+
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 CSV_FIELDS = [
     "timestamp",
@@ -30,23 +37,25 @@ def save_metrics_json(metrics, prefix="metrics"):
         json.dump(metrics, f, indent=4)
     print(f"[INFO] Métricas salvas em {filename}")
 
+def save_raw_json(data, filename="results/kubelet_snapshots.json"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    try:
+        with open(filename, "a") as f:  # append para acumular snapshots
+            json.dump(data, f, indent=2)
+            f.write("\n")  # separa por linha
+        print(f"[INFO] Snapshot salvo em {filename}")
+    except Exception as e:
+        logging.error(f"Erro ao salvar JSON: {e}")
+
 def _normalize_event_for_csv(event: dict) -> dict:
-    """
-    Garante que o evento tenha exatamente as colunas do CSV_FIELDS.
-    - Se vier avg_cpu_pct, mapeia para cpu_pct.
-    - Se vier replicas_before/replicas_after, anexa ao notes.
-    """
     row = {k: "" for k in CSV_FIELDS}
-    # Copia campos triviais
     for k in ["timestamp", "event_type", "replica_count", "pod_name", "cpu_m", "cpu_pct", "notes"]:
         if k in event:
             row[k] = event[k]
 
-    # Fallback: avg_cpu_pct -> cpu_pct
     if not row["cpu_pct"] and "avg_cpu_pct" in event:
         row["cpu_pct"] = event["avg_cpu_pct"]
 
-    # Preserva info de scaling se existir
     if "replicas_before" in event or "replicas_after" in event:
         before_ = event.get("replicas_before", "")
         after_ = event.get("replicas_after", "")
@@ -56,7 +65,6 @@ def _normalize_event_for_csv(event: dict) -> dict:
     return row
 
 def save_metrics_csv(samples, filename):
-    # sempre cria com cabeçalho fixo
     with open(filename, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_FIELDS)
         writer.writeheader()
@@ -111,12 +119,10 @@ def get_k8s_metrics_top(namespace=None):
             if len(parts) >= 3:
                 cpu = parts[1]
                 mem = parts[2]
-                # CPU
                 if cpu.endswith("m"):
                     cpu_m = int(cpu[:-1])
                 else:
                     cpu_m = int(cpu) * 1000
-                # Memória
                 if mem.lower().endswith("mi"):
                     mem_mi = int(mem[:-2])
                 elif mem.lower().endswith("gi"):
@@ -150,20 +156,14 @@ def get_k8s_resource_usage(namespace, label_selector):
     }
 
 logging.basicConfig(filename="k8s_test_events.log", level=logging.INFO, format="%(asctime)s - %(message)s")
+_last_replica_count = None
 
 # =========================
-# Coleta de métricas
+# Coleta via metrics-server
 # =========================
-
-_last_replica_count = None  # (reservado para futuros eventos de scaling)
 
 def collect_snapshot(namespace="default", deployment_name="flask-api"):
-    """
-    Retorna eventos e métricas do cluster no instante atual.
-    - Uso de CPU por pod individual (event_type: pod_usage)
-    - Alertas agregados: cpu_alert (>=70%), cpu_critical (>=100%) usando média dos pods
-    - request_wait: quando todos os pods estão ~100%
-    """
+    global _last_replica_count
     config.load_kube_config()
     v1 = client.CoreV1Api()
     apps_v1 = client.AppsV1Api()
@@ -172,14 +172,12 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
     events = []
     replicas = None
 
-    # Deployment info
     try:
         deployment = apps_v1.read_namespaced_deployment(deployment_name, namespace)
         replicas = deployment.status.replicas or 0
     except Exception as e:
         logging.warning(f"Erro ao obter deployment {deployment_name}: {e}")
 
-    # Métricas pods
     try:
         metrics = custom_api.list_namespaced_custom_object(
             group="metrics.k8s.io",
@@ -192,7 +190,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
         return []
 
     cpu_totals = []
-    all_pods_100 = True  # flag para detectar fila sem recursos
+    all_pods_100 = True
 
     for pod in metrics.get("items", []):
         pod_name = pod["metadata"]["name"]
@@ -211,7 +209,6 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
             if cpu_pct < 100:
                 all_pods_100 = False
 
-            # evento por pod (para CSV detalhado)
             events.append({
                 "timestamp": datetime.datetime.utcnow().isoformat(),
                 "event_type": "pod_usage",
@@ -225,7 +222,20 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
         except Exception as e:
             logging.warning(f"Erro ao processar CPU do pod {pod['metadata']['name']}: {e}")
 
-    # --- ALERTAS AGREGADOS (média dos pods) ---
+    if _last_replica_count is not None and replicas is not None and replicas != _last_replica_count:
+        events.append({
+            "timestamp": datetime.datetime.utcnow().isoformat(),
+            "event_type": "scale_event",
+            "replica_count": replicas,
+            "replicas_before": _last_replica_count,
+            "replicas_after": replicas,
+            "pod_name": "",
+            "cpu_m": "",
+            "cpu_pct": "",
+            "notes": f"Replicas alteradas de {_last_replica_count} para {replicas}"
+        })
+    _last_replica_count = replicas
+
     if cpu_totals:
         avg_cpu_m = sum(cpu_totals) / len(cpu_totals)
         cpu_pct_avg = (avg_cpu_m / 1000) * 100
@@ -237,7 +247,7 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "replica_count": replicas,
                 "pod_name": "",
                 "cpu_m": "",
-                "cpu_pct": cpu_pct_avg,  # <- usa campo compatível com o cabeçalho
+                "cpu_pct": cpu_pct_avg,
                 "notes": "CPU media >=70%"
             })
         if cpu_pct_avg >= 100:
@@ -247,11 +257,10 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
                 "replica_count": replicas,
                 "pod_name": "",
                 "cpu_m": "",
-                "cpu_pct": cpu_pct_avg,  # <- usa campo compatível com o cabeçalho
+                "cpu_pct": cpu_pct_avg,
                 "notes": "CPU media >=100%"
             })
 
-    # Detecta fila de requests (sem HPA, todos pods saturados)
     if replicas and replicas > 0 and all_pods_100:
         events.append({
             "timestamp": datetime.datetime.utcnow().isoformat(),
@@ -265,19 +274,96 @@ def collect_snapshot(namespace="default", deployment_name="flask-api"):
 
     return events
 
-def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=5):
-    """
-    Monitora métricas de CPU e eventos durante o teste.
-    Usa collect_snapshot em loop para criar eventos contínuos.
-    """
+# =========================
+# Coleta via Kubelet (via proxy)
+# =========================
+
+def get_kubelet_stats_proxy(node_name):
+    url = f"http://{APP_HOST}:{APP_PORT}/api/v1/nodes/{node_name}/proxy/stats/summary"
+    try:
+        resp = requests.get(url, timeout=3)
+        resp.raise_for_status()
+        return resp.json()
+    except Exception as e:
+        logging.error(f"Erro ao acessar kubelet via proxy para node {node_name}: {e}")
+        return None
+
+
+def collect_snapshot_kubelet(namespace="default", deployment_name="flask-api", label_selector="app=flask-api"):
+    config.load_kube_config()
+    v1 = client.CoreV1Api()
+    apps_v1 = client.AppsV1Api()
+    try:
+        deployment = apps_v1.read_namespaced_deployment(deployment_name, namespace)
+        replicas = deployment.status.replicas or 0
+    except Exception:
+        replicas = None
+
+    # listar todos os pods do deployment
+    pods = v1.list_namespaced_pod(namespace, label_selector=label_selector)
+    events = []
+
+    for pod in pods.items:
+        node_name = pod.spec.node_name
+        stats = get_kubelet_stats_proxy(node_name)
+        if not stats or "pods" not in stats:
+            logging.warning(f"Snapshot vazio do kubelet para {node_name}")
+            continue
+
+        # procurar pod exato no stats do node
+        for stat_pod in stats["pods"]:
+            if stat_pod.get("podRef", {}).get("name") != pod.metadata.name:
+                continue
+
+            containers = stat_pod.get("containers", [])
+            for container in containers:
+                try:
+                    cpu_usage_nano = container["cpu"]["usageNanoCores"]
+                    cpu_m = cpu_usage_nano / 1_000_000
+                    cpu_pct = (cpu_m / 1000) * 100
+
+                    events.append({
+                        "timestamp": datetime.datetime.utcnow().isoformat(),
+                        "event_type": "pod_usage_kubelet",
+                        "replica_count": replicas,  # replica_count do deployment
+                        "pod_name": f"{pod.metadata.name}/{container['name']}",
+                        "cpu_m": cpu_m,
+                        "cpu_pct": cpu_pct,
+                        "notes": f"via kubelet {node_name}"
+                    })
+                except Exception as e:
+                    logging.warning(f"Erro ao processar contêiner {container.get('name')} do pod {pod.metadata.name}: {e}")
+
+    logging.info(f"Total de pods Flask coletados: {len(events)}")
+    return events
+
+
+# =========================
+# Coleta durante teste
+# =========================
+
+def collect_during_test(namespace="default", deployment_name="flask-api", duration_seconds=60, interval_seconds=5, use_kubelet=True):
     start_time = time.time()
     events = []
     logging.info("Iniciando coleta de métricas durante teste.")
 
     while time.time() - start_time < duration_seconds:
-        snapshot_events = collect_snapshot(namespace, deployment_name)
-        events.extend(snapshot_events)
+        try:
+            if use_kubelet:
+                snapshot_events = collect_snapshot_kubelet(namespace)
+            else:
+                snapshot_events = collect_snapshot(namespace, deployment_name)
+
+            if snapshot_events:
+                events.extend(snapshot_events)
+                #print(f"[DEBUG] Snapshot coletado com {len(snapshot_events)} eventos")
+            else:
+                logging.warning("[WARN] Nenhum evento coletado neste ciclo")
+
+        except Exception as e:
+            logging.error(f"Erro durante coleta: {e}")
+
         time.sleep(interval_seconds)
-    
+
     print(f"[DEBUG] Total de eventos coletados: {len(events)}")
     return events

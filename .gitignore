@@ -9,3 +9,6 @@ terraform.tfstate.backup
 
 tcc-key
 tcc-key.pub
+
+.env.local
+config.py
