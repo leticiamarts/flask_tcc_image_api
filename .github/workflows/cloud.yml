@@ -80,7 +80,10 @@ jobs:
             --enable-autorepair \
             --image-type COS_CONTAINERD \
             --disk-size 100 \
-            --enable-ip-alias
+            --enable-ip-alias \
+            --enable-autoscaling \
+            --min-nodes=1 \
+            --max-nodes=3
 
       - name: Get GKE credentials
         run: |
