@@ -4,10 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import datetime
-import json
-from kubernetes import client, config
-import csv
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--url", required=True, help="URL pública da aplicação Streamlit")
@@ -54,6 +50,15 @@ def run_load_test(url, image_path, n=100, sleep=0.1, driver=None):
         for i in range(n):
             start = time.time()
             try:
+                upload = WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'input[type="file"]'))
+                )
+                upload.send_keys(image_path)
+
+                send_btn = WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.XPATH, '//button[contains(., "Enviar")]'))
+                )
+
                 driver.execute_script("arguments[0].click();", send_btn)
 
                 processed_img = WebDriverWait(driver, 10).until(
@@ -63,14 +68,13 @@ def run_load_test(url, image_path, n=100, sleep=0.1, driver=None):
                 elapsed_ms = (time.time() - start) * 1000
                 latencies.append(elapsed_ms)
                 success_count += 1
-            except:
+            except Exception as e:
                 elapsed_ms = (time.time() - start) * 1000
                 latencies.append(elapsed_ms)
                 print(f"[WARN] Request {i+1} falhou: {e}")
-                
-
 
             time.sleep(sleep)
+
 
     finally:
         if created_here:
