@@ -1,0 +1,25 @@
+{
+    "start_time": 1757896421.464325,
+    "end_time": 1757896752.7514226,
+    "duration_sec": 331.2870976924896,
+    "latency_stats": {
+        "latency_avg_ms": 37.916952420056354,
+        "latency_min_ms": 24.55306053161621,
+        "latency_max_ms": 1605.4823398590088,
+        "latency_p50_ms": 33.00142288208008,
+        "latency_p90_ms": 44.00050640106201,
+        "latency_p99_ms": 71.29769086837769
+    },
+    "success_error_rate": {
+        "success_rate_pct": 100.0,
+        "error_rate_pct": 0.0
+    },
+    "k8s_usage": {
+        "replica_count": 3,
+        "cpu_total_m": 837,
+        "mem_total_mi": 1796
+    },
+    "total_requests": 6150,
+    "total_success": 6150,
+    "total_errors": 0
+}
