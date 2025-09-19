@@ -1,0 +1,2711 @@
+[
+  {
+    "timestamp": "2025-09-19T13:24:58.359814",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.329848,
+    "cpu_pct": 0.13298480000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:24:59.411989",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.329848,
+    "cpu_pct": 0.13298480000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:00.487703",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.348077,
+    "cpu_pct": 0.1348077,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:01.569160",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.296706,
+    "cpu_pct": 0.1296706,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:02.639879",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.296706,
+    "cpu_pct": 0.1296706,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:03.729475",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.708811,
+    "cpu_pct": 0.1708811,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:04.794788",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 265.635018,
+    "cpu_pct": 26.5635018,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:05.877984",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 265.635018,
+    "cpu_pct": 26.5635018,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:06.946150",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1489.076548,
+    "cpu_pct": 148.90765480000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:08.033607",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1489.076548,
+    "cpu_pct": 148.90765480000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:09.100453",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1334.965763,
+    "cpu_pct": 133.49657630000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:10.187008",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1405.993063,
+    "cpu_pct": 140.5993063,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:11.265298",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1405.993063,
+    "cpu_pct": 140.5993063,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:12.340899",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1387.001027,
+    "cpu_pct": 138.7001027,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:13.416927",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1387.001027,
+    "cpu_pct": 138.7001027,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:14.479838",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1658.723332,
+    "cpu_pct": 165.8723332,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:15.550181",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1295.133459,
+    "cpu_pct": 129.5133459,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:16.613318",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1321.653814,
+    "cpu_pct": 132.1653814,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:17.668265",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1321.653814,
+    "cpu_pct": 132.1653814,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:18.734546",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1301.148145,
+    "cpu_pct": 130.11481450000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:19.812861",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1469.655532,
+    "cpu_pct": 146.9655532,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:20.899355",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1298.727025,
+    "cpu_pct": 129.87270249999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:21.980444",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1298.727025,
+    "cpu_pct": 129.87270249999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:23.029730",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1443.864209,
+    "cpu_pct": 144.3864209,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:24.103232",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1462.077661,
+    "cpu_pct": 146.20776610000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:25.163305",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1396.594776,
+    "cpu_pct": 139.6594776,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:26.242829",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1396.594776,
+    "cpu_pct": 139.6594776,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:27.319001",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1378.224126,
+    "cpu_pct": 137.8224126,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:28.404459",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1378.224126,
+    "cpu_pct": 137.8224126,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:29.474735",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1458.592878,
+    "cpu_pct": 145.8592878,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:30.572738",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1285.716043,
+    "cpu_pct": 128.5716043,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:31.649319",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1444.131765,
+    "cpu_pct": 144.41317650000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:32.718784",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1353.754785,
+    "cpu_pct": 135.3754785,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:33.780749",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1357.2082,
+    "cpu_pct": 135.72082,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:34.856727",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1399.870814,
+    "cpu_pct": 139.9870814,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:35.928690",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1395.30713,
+    "cpu_pct": 139.530713,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:36.984166",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1395.675873,
+    "cpu_pct": 139.56758729999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:38.038924",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1395.675873,
+    "cpu_pct": 139.56758729999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:39.113098",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1325.09613,
+    "cpu_pct": 132.509613,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:40.163748",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1292.471461,
+    "cpu_pct": 129.2471461,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:41.236710",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1292.471461,
+    "cpu_pct": 129.2471461,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:42.316512",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1292.551309,
+    "cpu_pct": 129.2551309,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:43.373230",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1336.129211,
+    "cpu_pct": 133.6129211,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:44.430628",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.990479,
+    "cpu_pct": 141.8990479,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:45.489842",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.990479,
+    "cpu_pct": 141.8990479,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:46.550008",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1392.232986,
+    "cpu_pct": 139.2232986,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:47.603587",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1430.776026,
+    "cpu_pct": 143.0776026,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:48.666965",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1436.054248,
+    "cpu_pct": 143.60542479999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:49.725881",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1436.054248,
+    "cpu_pct": 143.60542479999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:50.795359",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1413.090507,
+    "cpu_pct": 141.3090507,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:51.870445",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1339.956434,
+    "cpu_pct": 133.99564339999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:52.929202",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1339.956434,
+    "cpu_pct": 133.99564339999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:53.997314",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1406.942172,
+    "cpu_pct": 140.6942172,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:55.058462",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1406.942172,
+    "cpu_pct": 140.6942172,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:56.126583",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1375.066425,
+    "cpu_pct": 137.5066425,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:57.188510",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1313.575569,
+    "cpu_pct": 131.35755690000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:58.283279",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1313.575569,
+    "cpu_pct": 131.35755690000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:25:59.362360",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1349.418961,
+    "cpu_pct": 134.9418961,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:00.424834",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1222.456872,
+    "cpu_pct": 122.24568719999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:01.492592",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.508345,
+    "cpu_pct": 141.8508345,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:02.588380",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.508345,
+    "cpu_pct": 141.8508345,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:03.673670",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1293.806529,
+    "cpu_pct": 129.3806529,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:04.724232",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1278.426644,
+    "cpu_pct": 127.84266439999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:05.788561",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1278.426644,
+    "cpu_pct": 127.84266439999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:06.841536",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1347.331396,
+    "cpu_pct": 134.7331396,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:07.921536",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1339.721679,
+    "cpu_pct": 133.9721679,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:08.996626",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1293.924633,
+    "cpu_pct": 129.3924633,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:10.068988",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1402.774908,
+    "cpu_pct": 140.2774908,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:11.119475",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1402.774908,
+    "cpu_pct": 140.2774908,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:12.183699",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1419.385425,
+    "cpu_pct": 141.9385425,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:13.269601",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1382.4945,
+    "cpu_pct": 138.24945,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:14.340890",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1502.267494,
+    "cpu_pct": 150.22674940000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:15.391393",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1502.267494,
+    "cpu_pct": 150.22674940000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:16.458216",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1272.862405,
+    "cpu_pct": 127.28624050000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:17.526837",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1349.090162,
+    "cpu_pct": 134.9090162,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:18.590048",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1329.218737,
+    "cpu_pct": 132.9218737,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:19.647420",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1329.218737,
+    "cpu_pct": 132.9218737,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:20.700943",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1378.657699,
+    "cpu_pct": 137.8657699,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:21.766621",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1375.063214,
+    "cpu_pct": 137.50632140000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:22.836964",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1375.063214,
+    "cpu_pct": 137.50632140000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:23.902114",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1357.561441,
+    "cpu_pct": 135.7561441,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:24.967040",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1357.561441,
+    "cpu_pct": 135.7561441,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:26.025581",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1378.517234,
+    "cpu_pct": 137.85172339999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:27.079645",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1242.04381,
+    "cpu_pct": 124.204381,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:28.142947",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1340.465669,
+    "cpu_pct": 134.0465669,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:29.207436",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1515.870584,
+    "cpu_pct": 151.5870584,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:30.273914",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1515.870584,
+    "cpu_pct": 151.5870584,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:31.357702",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1347.62169,
+    "cpu_pct": 134.762169,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:32.451998",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1278.667631,
+    "cpu_pct": 127.8667631,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:33.516449",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1335.897266,
+    "cpu_pct": 133.5897266,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:34.610125",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1335.897266,
+    "cpu_pct": 133.5897266,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:35.665465",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1458.563743,
+    "cpu_pct": 145.8563743,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:36.735413",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1294.915698,
+    "cpu_pct": 129.4915698,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:37.804986",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1294.915698,
+    "cpu_pct": 129.4915698,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:38.859315",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1319.747171,
+    "cpu_pct": 131.9747171,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:39.925292",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1454.517117,
+    "cpu_pct": 145.45171170000003,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:40.988162",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1302.184254,
+    "cpu_pct": 130.2184254,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:42.061702",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1302.184254,
+    "cpu_pct": 130.2184254,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:43.113319",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1331.207114,
+    "cpu_pct": 133.1207114,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:44.180850",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1383.749052,
+    "cpu_pct": 138.3749052,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:45.249746",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1408.080437,
+    "cpu_pct": 140.8080437,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:46.324205",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1408.080437,
+    "cpu_pct": 140.8080437,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:47.383443",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1398.222782,
+    "cpu_pct": 139.8222782,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:48.443629",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1424.085987,
+    "cpu_pct": 142.4085987,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:49.506423",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1378.213635,
+    "cpu_pct": 137.82136350000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:50.564465",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1337.244408,
+    "cpu_pct": 133.72444080000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:51.648504",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1337.244408,
+    "cpu_pct": 133.72444080000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:52.717821",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1245.963477,
+    "cpu_pct": 124.59634770000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:53.782205",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1245.963477,
+    "cpu_pct": 124.59634770000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:54.876767",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1333.558777,
+    "cpu_pct": 133.35587769999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:55.966658",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1358.295441,
+    "cpu_pct": 135.8295441,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:57.020395",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1507.354078,
+    "cpu_pct": 150.73540780000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:58.088032",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1430.085948,
+    "cpu_pct": 143.0085948,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:26:59.158844",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1430.085948,
+    "cpu_pct": 143.0085948,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:00.228880",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1309.568939,
+    "cpu_pct": 130.9568939,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:01.337965",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1334.723343,
+    "cpu_pct": 133.4723343,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:02.385893",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1334.723343,
+    "cpu_pct": 133.4723343,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:03.462159",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1361.716108,
+    "cpu_pct": 136.1716108,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:04.545853",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1446.496807,
+    "cpu_pct": 144.6496807,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:05.634341",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1446.496807,
+    "cpu_pct": 144.6496807,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:06.706299",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.168044,
+    "cpu_pct": 141.8168044,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:07.775137",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1453.897701,
+    "cpu_pct": 145.3897701,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:08.832444",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1366.315803,
+    "cpu_pct": 136.6315803,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:09.915312",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1366.315803,
+    "cpu_pct": 136.6315803,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:10.973146",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1326.142732,
+    "cpu_pct": 132.6142732,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:12.072982",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1283.768536,
+    "cpu_pct": 128.3768536,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:13.134852",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1283.768536,
+    "cpu_pct": 128.3768536,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:14.199807",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1392.562596,
+    "cpu_pct": 139.2562596,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:15.264937",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1534.945875,
+    "cpu_pct": 153.49458749999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:16.326524",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1534.945875,
+    "cpu_pct": 153.49458749999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:17.397276",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1239.988443,
+    "cpu_pct": 123.99884429999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:18.455005",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1418.543456,
+    "cpu_pct": 141.85434560000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:19.531373",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1330.867672,
+    "cpu_pct": 133.0867672,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:20.588092",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1330.867672,
+    "cpu_pct": 133.0867672,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:21.658315",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1327.867742,
+    "cpu_pct": 132.7867742,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:22.729284",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1533.605462,
+    "cpu_pct": 153.3605462,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:23.805424",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1381.564253,
+    "cpu_pct": 138.1564253,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:24.858639",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1381.564253,
+    "cpu_pct": 138.1564253,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:25.906589",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1311.738316,
+    "cpu_pct": 131.1738316,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:26.955106",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1267.238507,
+    "cpu_pct": 126.72385070000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:28.024101",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1267.238507,
+    "cpu_pct": 126.72385070000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:29.077302",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1198.341257,
+    "cpu_pct": 119.8341257,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:30.120018",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 106.174013,
+    "cpu_pct": 10.6174013,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:31.177232",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.855287,
+    "cpu_pct": 0.0855287,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:32.255097",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.855287,
+    "cpu_pct": 0.0855287,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:33.328103",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.997544,
+    "cpu_pct": 0.1997544,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:34.389906",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.482663,
+    "cpu_pct": 0.14826630000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:35.456444",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 40.021671,
+    "cpu_pct": 4.002167099999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:36.526353",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 931.316682,
+    "cpu_pct": 93.13166820000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:37.587814",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 970.032315,
+    "cpu_pct": 97.00323150000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:38.663657",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 970.032315,
+    "cpu_pct": 97.00323150000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:39.736520",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 720.506855,
+    "cpu_pct": 72.0506855,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:40.796140",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 720.506855,
+    "cpu_pct": 72.0506855,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:41.854784",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 303.176807,
+    "cpu_pct": 30.3176807,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:42.931086",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 172.469298,
+    "cpu_pct": 17.246929800000004,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:44.010867",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 172.469298,
+    "cpu_pct": 17.246929800000004,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:45.087969",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 696.713753,
+    "cpu_pct": 69.67137530000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:46.164752",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 696.713753,
+    "cpu_pct": 69.67137530000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:47.246709",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 158.140659,
+    "cpu_pct": 15.8140659,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:48.317179",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 151.577414,
+    "cpu_pct": 15.157741399999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:49.397008",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 514.843635,
+    "cpu_pct": 51.48436349999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:50.477075",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 514.843635,
+    "cpu_pct": 51.48436349999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:51.539890",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 129.302248,
+    "cpu_pct": 12.930224799999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:52.596995",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1207.005753,
+    "cpu_pct": 120.7005753,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:53.661824",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 177.824863,
+    "cpu_pct": 17.7824863,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:54.739961",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 104.234186,
+    "cpu_pct": 10.4234186,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:55.794930",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 104.234186,
+    "cpu_pct": 10.4234186,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:56.844965",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 558.62354,
+    "cpu_pct": 55.862354,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:57.925475",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 558.62354,
+    "cpu_pct": 55.862354,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:27:58.983790",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 177.523534,
+    "cpu_pct": 17.7523534,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:00.067389",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 517.028654,
+    "cpu_pct": 51.7028654,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:01.125131",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 517.028654,
+    "cpu_pct": 51.7028654,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:02.200149",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 542.379973,
+    "cpu_pct": 54.237997299999996,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:03.261503",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 542.379973,
+    "cpu_pct": 54.237997299999996,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:04.335740",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 136.459471,
+    "cpu_pct": 13.6459471,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:05.419020",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 481.521756,
+    "cpu_pct": 48.1521756,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:06.485692",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 481.521756,
+    "cpu_pct": 48.1521756,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:07.553443",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 439.469477,
+    "cpu_pct": 43.9469477,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:08.618781",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.073123,
+    "cpu_pct": 0.20731229999999995,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:09.673276",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.12409,
+    "cpu_pct": 0.11240900000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:10.743723",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.278566,
+    "cpu_pct": 0.12785660000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:11.804432",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.278566,
+    "cpu_pct": 0.12785660000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:12.847863",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.94543,
+    "cpu_pct": 0.094543,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:13.890146",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.182942,
+    "cpu_pct": 0.21829420000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:14.960726",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.182942,
+    "cpu_pct": 0.21829420000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:16.028438",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.726274,
+    "cpu_pct": 0.0726274,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:17.088981",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.35888,
+    "cpu_pct": 0.23588800000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:18.133099",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.168825,
+    "cpu_pct": 0.1168825,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:19.197408",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.459454,
+    "cpu_pct": 0.1459454,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:20.252204",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.188197,
+    "cpu_pct": 0.1188197,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:21.313309",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.188197,
+    "cpu_pct": 0.1188197,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:22.375734",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.20884,
+    "cpu_pct": 0.12088399999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:23.420352",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.12611,
+    "cpu_pct": 0.112611,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:24.462513",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.77862,
+    "cpu_pct": 0.17786200000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:25.504934",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.257358,
+    "cpu_pct": 0.12573579999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:26.575264",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.257358,
+    "cpu_pct": 0.12573579999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:27.637865",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.775312,
+    "cpu_pct": 0.0775312,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:28.690843",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.224592,
+    "cpu_pct": 0.12245919999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:29.743874",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.2711,
+    "cpu_pct": 0.22711000000000003,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:30.798128",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.123791,
+    "cpu_pct": 0.11237910000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:31.871981",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.123791,
+    "cpu_pct": 0.11237910000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:32.933405",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.945453,
+    "cpu_pct": 0.0945453,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:34.002301",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.924731,
+    "cpu_pct": 0.1924731,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:35.070912",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.201054,
+    "cpu_pct": 0.1201054,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:36.114095",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.147923,
+    "cpu_pct": 0.11479230000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:37.163622",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.210281,
+    "cpu_pct": 0.12102809999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:38.227000",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.336169,
+    "cpu_pct": 0.13361689999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:39.269857",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.336169,
+    "cpu_pct": 0.13361689999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:40.311968",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.558203,
+    "cpu_pct": 0.1558203,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:41.353500",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.896522,
+    "cpu_pct": 0.0896522,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:42.415812",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.896522,
+    "cpu_pct": 0.0896522,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:43.459141",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.353437,
+    "cpu_pct": 0.1353437,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:44.501361",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.10857,
+    "cpu_pct": 0.11085700000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:45.542626",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.284177,
+    "cpu_pct": 0.1284177,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:46.585358",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.136531,
+    "cpu_pct": 0.11365309999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:47.653512",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.136531,
+    "cpu_pct": 0.11365309999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:48.709555",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.277795,
+    "cpu_pct": 0.1277795,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:49.751676",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.277795,
+    "cpu_pct": 0.1277795,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:50.811463",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.402398,
+    "cpu_pct": 0.1402398,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:51.854573",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.45379,
+    "cpu_pct": 0.24537899999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:52.923966",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.950705,
+    "cpu_pct": 0.0950705,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:53.983861",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.950705,
+    "cpu_pct": 0.0950705,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:55.025047",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.41491,
+    "cpu_pct": 0.14149099999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:56.066491",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.41491,
+    "cpu_pct": 0.14149099999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:57.127834",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.472492,
+    "cpu_pct": 0.1472492,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:58.203488",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.385855,
+    "cpu_pct": 0.1385855,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:28:59.264685",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.385855,
+    "cpu_pct": 0.1385855,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:00.316368",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.890193,
+    "cpu_pct": 0.08901930000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:01.375035",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.083326,
+    "cpu_pct": 0.10833259999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:02.426795",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.245506,
+    "cpu_pct": 0.1245506,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:03.477958",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.094171,
+    "cpu_pct": 0.20941709999999997,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:04.538202",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.252643,
+    "cpu_pct": 0.1252643,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:05.605608",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.252643,
+    "cpu_pct": 0.1252643,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:06.661601",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.96417,
+    "cpu_pct": 0.096417,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:07.727525",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.107511,
+    "cpu_pct": 0.11075109999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:08.776962",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.677245,
+    "cpu_pct": 0.16772450000000003,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:09.843684",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.677245,
+    "cpu_pct": 0.16772450000000003,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:10.909366",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.552643,
+    "cpu_pct": 0.1552643,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:11.952597",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.050049,
+    "cpu_pct": 0.1050049,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:13.006849",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.394345,
+    "cpu_pct": 0.1394345,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:14.080282",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.394345,
+    "cpu_pct": 0.1394345,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:15.141310",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.636871,
+    "cpu_pct": 0.1636871,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:16.206895",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.472797,
+    "cpu_pct": 0.14727969999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:17.265629",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.472797,
+    "cpu_pct": 0.14727969999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:18.308242",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.876478,
+    "cpu_pct": 0.0876478,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:19.359928",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.876478,
+    "cpu_pct": 0.0876478,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:20.416043",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.629045,
+    "cpu_pct": 0.1629045,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:21.469351",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.114095,
+    "cpu_pct": 0.11140950000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:22.531854",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.562587,
+    "cpu_pct": 0.1562587,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:23.588864",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.562587,
+    "cpu_pct": 0.1562587,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:24.648776",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.862849,
+    "cpu_pct": 0.0862849,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:25.708472",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.060278,
+    "cpu_pct": 0.2060278,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:26.767603",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.959968,
+    "cpu_pct": 0.09599680000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:27.823352",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.959968,
+    "cpu_pct": 0.09599680000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:28.876864",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.808487,
+    "cpu_pct": 0.1808487,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:29.930476",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.808487,
+    "cpu_pct": 0.1808487,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:30.994055",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.869291,
+    "cpu_pct": 0.0869291,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:32.058489",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.804555,
+    "cpu_pct": 0.1804555,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:33.111295",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.804555,
+    "cpu_pct": 0.1804555,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:34.155250",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.55661,
+    "cpu_pct": 0.15566100000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:35.226606",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.93386,
+    "cpu_pct": 0.093386,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:36.268944",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.93386,
+    "cpu_pct": 0.093386,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:37.311975",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.403548,
+    "cpu_pct": 0.1403548,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:38.355018",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.940935,
+    "cpu_pct": 0.0940935,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:39.420929",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.623457,
+    "cpu_pct": 0.2623457,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:40.480924",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.623457,
+    "cpu_pct": 0.2623457,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:41.543167",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.014762,
+    "cpu_pct": 0.1014762,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:42.608527",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.624384,
+    "cpu_pct": 0.1624384,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:43.660265",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.624384,
+    "cpu_pct": 0.1624384,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:44.713913",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.441981,
+    "cpu_pct": 0.1441981,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:45.781714",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.441981,
+    "cpu_pct": 0.1441981,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:46.844561",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.700086,
+    "cpu_pct": 0.07000859999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:47.891686",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.820557,
+    "cpu_pct": 0.1820557,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:48.959701",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.123777,
+    "cpu_pct": 0.11237770000000001,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:50.026768",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.505641,
+    "cpu_pct": 0.1505641,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:51.076154",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.505641,
+    "cpu_pct": 0.1505641,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:52.140861",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.022287,
+    "cpu_pct": 0.10222869999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:53.208764",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.001278,
+    "cpu_pct": 0.2001278,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:54.256454",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.930144,
+    "cpu_pct": 0.0930144,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:55.309797",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.930144,
+    "cpu_pct": 0.0930144,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:56.358831",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.753356,
+    "cpu_pct": 0.1753356,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:57.419955",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.746095,
+    "cpu_pct": 0.1746095,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:58.485234",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.746095,
+    "cpu_pct": 0.1746095,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:29:59.528064",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.023497,
+    "cpu_pct": 0.10234970000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:00.586654",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.185844,
+    "cpu_pct": 0.11858439999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:01.645547",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.129476,
+    "cpu_pct": 0.1129476,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:02.713566",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.491898,
+    "cpu_pct": 0.14918979999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:03.768515",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.491898,
+    "cpu_pct": 0.14918979999999998,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:04.823583",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.475977,
+    "cpu_pct": 0.1475977,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:05.884732",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.475977,
+    "cpu_pct": 0.1475977,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:06.949669",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 2.11686,
+    "cpu_pct": 0.21168599999999999,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:07.991883",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.391767,
+    "cpu_pct": 0.1391767,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:09.033400",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.336059,
+    "cpu_pct": 0.1336059,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:10.076511",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.963897,
+    "cpu_pct": 0.0963897,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:11.144090",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 0.963897,
+    "cpu_pct": 0.0963897,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:12.196793",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.460183,
+    "cpu_pct": 0.14601830000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:13.258092",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.029984,
+    "cpu_pct": 0.1029984,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:14.324143",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.029984,
+    "cpu_pct": 0.1029984,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:15.370546",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.755261,
+    "cpu_pct": 0.1755261,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:16.430625",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.281848,
+    "cpu_pct": 0.12818480000000002,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  },
+  {
+    "timestamp": "2025-09-19T13:30:17.507233",
+    "event_type": "pod_usage_kubelet",
+    "replica_count": 1,
+    "pod_name": "flask-api-f76d49f48-725n8/flask-api",
+    "cpu_m": 1.330095,
+    "cpu_pct": 0.1330095,
+    "notes": "via kubelet k3d-local-cluster-server-0"
+  }
+]
