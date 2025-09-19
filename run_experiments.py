@@ -13,29 +13,31 @@ import importlib
 
 def run_phase_in_parallel(load_module, phase, load_args, threads=4):
     all_latencies, total_success, total_count = [], 0, 0
-    drivers = []
 
     def run_thread_load():
+        # cada thread cria seu próprio driver
         driver = load_module.create_driver(load_args["url"])
-        drivers.append(driver)
         try:
-            latencies, success, count = load_module.run_load_test(driver=driver, **{**load_args, **phase})
-            return latencies, success, count, driver
+            latencies, success, count = load_module.run_load_test(
+                driver=driver, **{**load_args, **phase}
+            )
+            return latencies, success, count
         except Exception as e:
             print(f"[ERROR] Thread load falhou: {e}")
-            return [], 0, 0, driver
+            return [], 0, 0
+        finally:
+            driver.quit()  # garante que só a thread que criou fecha
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
         futures = [executor.submit(run_thread_load) for _ in range(threads)]
         for f in as_completed(futures):
-            lat, success, count, driver = f.result()
+            lat, success, count = f.result()
             all_latencies.extend(lat)
             total_success += success
             total_count += count
-            # Fechando o driver ao final de cada thread
-            driver.quit()
 
     return all_latencies, total_success, total_count
+
 
 
 def run_experiment(load_type, namespace, label_selector, duration, load_args, phases=None, threads=3):
@@ -136,10 +138,10 @@ if __name__ == "__main__":
 
     phases = [
         {"n": 1000, "sleep": 0.1},  # pico
-        {"n": 400, "sleep": 0.04},   # carga média alta
-        {"n": 200, "sleep": 0.05},   # carga média
-        {"n": 400, "sleep": 0.04},   # carga média alta
-        {"n": 50, "sleep": 0.2}     # sustentada baixa
+        {"n": 600, "sleep": 0.05}#,   # carga média alta
+        #{"n": 200, "sleep": 0.05},   # carga média
+        #{"n": 400, "sleep": 0.04},   # carga média alta
+        #{"n": 50, "sleep": 0.2}     # sustentada baixa
     ] if args.load_type == "selenium" else None
 
     run_experiment(
