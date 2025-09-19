@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Carregar dados
-with_hpa = pd.read_csv("analysis/k8s_samples_selenium_20250914_213912.csv")
-without_hpa = pd.read_csv("analysis/k8s_samples_selenium_20250914_195420.csv")
+with_hpa = pd.read_csv("results/k8s_samples_selenium_20250919_113615.csv")
+without_hpa = pd.read_csv("analysis/k8s_samples_selenium_20250919_103018.csv")
 
 # Ajustar tempo relativo
 for df in [with_hpa, without_hpa]:
