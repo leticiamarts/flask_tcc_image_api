@@ -3,7 +3,7 @@ name: Deploy GKE Flask + Streamlit
 on:
   push:
     branches:
-      - main
+      - main-cloud
   workflow_dispatch:
 
 jobs:
