@@ -3,7 +3,7 @@ name: On-Premise Pipeline
 on:
   push:
     branches:
-      - dev-hpa
+      - main-onprem-hpa
   workflow_dispatch:
 
 jobs:
