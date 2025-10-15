@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Carregar dados
-with_hpa = pd.read_csv("analysis/2fases_1000_400_hpa.csv")
+with_hpa = pd.read_csv("analysis/k8s_samples_selenium_20251015_124649.csv")
 without_hpa = pd.read_csv("analysis/2fases_1000_400_sem_hpa.csv")
 
 # Ajustar tempo relativo
@@ -40,5 +40,5 @@ axes[1].set_xlim(0, 220)  # mostra exatamente até 220s
 plt.tight_layout()
 
 # Salvar figura
-plt.savefig("analysis/comparacao_limite220_hpa.png", dpi=300, bbox_inches="tight")
+plt.savefig("analysis/terceira_comparacao_limite220_hpa.png", dpi=300, bbox_inches="tight")
 plt.close()
