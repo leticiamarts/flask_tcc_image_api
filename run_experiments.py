@@ -138,7 +138,7 @@ if __name__ == "__main__":
 
     phases = [
         {"n": 1000, "sleep": 0.1},  # pico
-        {"n": 600, "sleep": 0.05}#,   # carga média alta
+        {"n": 400, "sleep": 0.04}#,   # carga média alta
         #{"n": 200, "sleep": 0.05},   # carga média
         #{"n": 400, "sleep": 0.04},   # carga média alta
         #{"n": 50, "sleep": 0.2}     # sustentada baixa
